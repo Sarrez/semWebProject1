@@ -1,0 +1,95 @@
+# baseURI: http://test1.project.rdfs/CoffeeShop
+# prefix: CoffeeShop
+
+@prefix CoffeeShop: <http://test1.project.rdfs/CoffeeShop#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://test1.project.rdfs/CoffeeShop>
+  a owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+CoffeeShop:AlchoholicDrink
+  a rdfs:Class ;
+  rdfs:label "Drink" ;
+  rdfs:subClassOf CoffeeShop:Drink ;
+.
+CoffeeShop:Barista
+  a rdfs:Class ;
+  rdfs:label "Drink" ;
+  rdfs:subClassOf CoffeeShop:Staff ;
+.
+CoffeeShop:Beer
+  a rdfs:Class ;
+  rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
+.
+CoffeeShop:Cocktail
+  a rdfs:Class ;
+  rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
+.
+CoffeeShop:Coffee
+  a rdfs:Class ;
+  rdfs:label "Drink" ;
+  rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
+.
+CoffeeShop:Drink
+  a rdfs:Class ;
+  rdfs:label "Drink" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+CoffeeShop:Drink_1
+  a CoffeeShop:Drink ;
+  rdfs:label "person1" ;
+.
+CoffeeShop:Drink_2
+  a CoffeeShop:Drink ;
+  rdfs:label "person1" ;
+.
+CoffeeShop:Drink_3
+  a CoffeeShop:Drink ;
+  rdfs:label "person1" ;
+.
+CoffeeShop:NonAlchoholicDrink
+  a rdfs:Class ;
+  rdfs:label "Drink" ;
+  rdfs:subClassOf CoffeeShop:Drink ;
+.
+CoffeeShop:Person
+  a rdfs:Class ;
+  rdfs:label "Drink" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+CoffeeShop:Person_1
+  a CoffeeShop:Person ;
+  rdfs:label "person1" ;
+.
+CoffeeShop:Person_2
+  a CoffeeShop:Person ;
+  rdfs:label "person1" ;
+.
+CoffeeShop:Server
+  a rdfs:Class ;
+  rdfs:label "Drink" ;
+  rdfs:subClassOf CoffeeShop:Staff ;
+.
+CoffeeShop:Staff
+  a rdfs:Class ;
+  rdfs:label "Drink" ;
+  rdfs:subClassOf CoffeeShop:Person ;
+.
+CoffeeShop:Supplier
+  a rdfs:Class ;
+  rdfs:label "person1" ;
+  rdfs:subClassOf CoffeeShop:Person ;
+.
+CoffeeShop:Tea
+  a rdfs:Class ;
+  rdfs:label "Drink" ;
+  rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
+.
+CoffeeShop:Wine
+  a rdfs:Class ;
+  rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
+.
