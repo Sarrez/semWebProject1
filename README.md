@@ -76,6 +76,7 @@ rdfs:comment, rdfs:label, κτλ. μπορείτε να έχετε ελληνι�
 
 ## :moneybag: -Usefull resources-
 1. About TopBraid Composer  
+* [Pizza ontology TopRaid steps](https://csiro-enviro-informatics.github.io/info-engineering/tutorials/tutorial-intro-to-rdf-and-owl.html#3-part-1-creating-a-simple-pizza-ontology-using-rdf-and-owl-15-20mins)  
 * [Classes Properties Vocabularies](https://www.w3.org/TR/rdf-schema/#ch_resourcef)  
 * [Online Full Documentation](https://www.topquadrant.com/resources/products/docs/TBC-Getting-Started-Guide52.pdf)    
 * [Greek small intro on the tool](https://drive.google.com/file/u/1/d/10sFCQzHeByAO76Q4qmg1izyrmLsbQCtr/view?usp=sharing)  
