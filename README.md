@@ -26,8 +26,8 @@ TopBraid Composer ([free edition 6.0.1](https://www.topquadrant.com/topbraid-com
 εννοιών και σχέσεων, μαζί με παραδείγματα. Μπορείτε να χρησιμοποιήσετε αυτό το
 εργαλείο για να οπτικοποιήσετε την οντολογία σας και να εισάγετε στο report αντίστοιχα
 screenshots.  
-* [Check the online tool](http://owlgred.lumii.lv/online_visualization)
-5 Παρουσίαση των ερωτημάτων SPARQL που ορίστηκαν και τα αποτελέσματα της εκτέλεσής
+* [Check the online tool](http://owlgred.lumii.lv/online_visualization)  
+5. Παρουσίαση των ερωτημάτων SPARQL που ορίστηκαν και τα αποτελέσματα της εκτέλεσής
 τους μέσα από το εργαλείο ανάπτυξης του μοντέλου (TopBraid Composer).
 6. Εάν θέλατε να μοντελοποιήσετε σχέσεις αλλά δεν μπορούσαν να αναπαρασταθούν λόγω
 των περιορισμών της RDFS.
@@ -91,5 +91,4 @@ rdfs:comment, rdfs:label, κτλ. μπορείτε να έχετε ελληνι�
 * [Coffee beans example](https://www.researchgate.net/publication/318251533_Expert_System_Based_on_an_Ontology_Method_to_Analyze_Types_of_Arabica_Coffee_Beans)  
 * [Coffee Drinks example](https://ijosblog.blogspot.com/2011/12/towards-ontology-of-coffee-drinks.html)  
   
-4. About other stuff  
 
