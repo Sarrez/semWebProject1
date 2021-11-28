@@ -7,6 +7,9 @@
 RDF/S, ώστε να σχεδιάσετε ένα μοντέλο (οντολογία) που να περιγράφει ένα συγκεκριμένο πεδίο.
 Επίσης, θα πρέπει να ορίσετε και να εκτελέσετε απλά SPARQL ερωτήματα. Προτείνεται η χρήση του
 TopBraid Composer (free edition 6.0.1).
+
+*link-->https://www.topquadrant.com/topbraid-composer-install/
+
 ### :eyes: Απαιτήσεις
 Επιλέξτε ένα θεματικό πεδίο ενδιαφέροντος για τον οποίο θα αναπτύξετε ένα μοντέλο (domain model).
 Για παράδειγμα, υπολογιστές, τουρισμός, έπιπλα, κάποιο χόμπι με το οποίο είστε εξοικειωμένοι (π.χ.
@@ -30,6 +33,8 @@ o Γραφική απεικόνιση τμημάτων του μοντέλου �
 εργαλείο για να οπτικοποιήσετε την οντολογία σας και να εισάγετε στο report αντίστοιχα
 screenshots.
 
+*link-->http://owlgred.lumii.lv/online_visualization
+
 o Παρουσίαση των ερωτημάτων SPARQL που ορίστηκαν και τα αποτελέσματα της εκτέλεσής
 τους μέσα από το εργαλείο ανάπτυξης του μοντέλου (TopBraid Composer).
 
@@ -52,6 +57,9 @@ o Οτιδήποτε άλλο κρίνετε απαραίτητο να συμπ�
 
 ● Δηλώστε την ομάδα και το θέμα σας σε αυτό το link. Όλα τα θέματα πρέπει να είναι
 διαφορετικά, οπότε δείτε ποια θέματα έχουν κατοχυρωθεί ήδη (first-come, first-served).
+
+*link-->https://docs.google.com/spreadsheets/d/1Vh-igwLSgFU7pPZFOgTD3D0XaLd-AgvcCkopiVn25Gw/edit#gid=0
+
 
 ● Η υποβολή των εργασιών θα γίνει μέσω του elearning για την κάθε ομάδα. Οι ομάδες θα
 οριστούν από τον διδάσκοντα (με βάση το παραπάνω αρχείο).
@@ -86,3 +94,25 @@ rdfs:comment, rdfs:label, κτλ. μπορείτε να έχετε ελληνι�
 
 ● Χρησιμοποιήστε αναφορές όταν χρησιμοποιείτε κάτι από κάποιον άλλο (π.χ. κάποιο άλλο
 εργαλείο
+
+### :eyes: -Usefull resources-
+A] About TopBraid Composer
+  -https://www.topquadrant.com/resources/products/docs/TBC-Getting-Started-Guide52.pdf
+  -https://drive.google.com/file/u/1/d/10sFCQzHeByAO76Q4qmg1izyrmLsbQCtr/view?usp=sharing
+  
+B] About the visualization of what we are doing 
+  -http://owlgred.lumii.lv/online_visualization
+  
+C] About online books
+  -https://oiipdf.com/download/learning-sparql-2nd-edition
+  -https://repository.kallipos.gr/bitstream/11419/1338/1/lodbook.pdf
+
+D] About already existing projects that probably can help
+  -https://www.academia.edu/43397028/%CE%A3%CE%B7%CE%BC%CE%B1%CF%83%CE%B9%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%BA%CF%8C%CF%82_%CE%99%CF%83%CF%84%CF%8C%CF%82_%CE%9C%CE%BF%CE%BD%CF%84%CE%B5%CE%BB%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%83%CE%B7_%CE%A3%CF%85%CF%83%CF%84%CE%AE%CE%BC%CE%B1%CF%84%CE%BF%CF%82_%CE%94%CE%B9%CE%B1%CF%87%CE%B5%CE%AF%CF%81%CE%B9%CF%83%CE%B7%CF%82_%CE%92%CE%B9%CE%B2%CE%BB%CE%B9%CE%BF%CE%B8%CE%AE%CE%BA%CE%B7%CF%82_%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%B7%CE%BC%CE%AF%CE%BF%CF%85_Semantic_Web_University_Library_Management_System_Modeling_article_
+  
+  -https://www.researchgate.net/publication/318251533_Expert_System_Based_on_an_Ontology_Method_to_Analyze_Types_of_Arabica_Coffee_Beans
+  
+  -https://ijosblog.blogspot.com/2011/12/towards-ontology-of-coffee-drinks.html
+  
+E] About other stuff  
+  -https://www.w3.org/TR/rdf-schema/#ch_resource
