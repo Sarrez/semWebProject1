@@ -52,6 +52,8 @@ o Οτιδήποτε άλλο κρίνετε απαραίτητο να συμπ�
 
 ● Η αναφορά (report).
 
+*link-->https://docs.google.com/document/d/1ZIalINvLoVWyfHmywguXLhJw3PTzobgYhQ6ZtRkdwj4/edit
+
 ### :eyes: Οδηγίες υποβολής
 ● Η εργασία θα πρέπει να γίνει σε ομάδες των δύο ατόμων.
 
