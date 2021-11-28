@@ -47,11 +47,10 @@ o Θα πρέπει να αναφέρεται στο υλικό που θα πα
 
 o Οτιδήποτε άλλο κρίνετε απαραίτητο να συμπεριληφθεί στην αναφορά (report).
 
-### :eyes: Υλικό προς παράδοση
-======
+## :eyes: Υλικό προς παράδοση
 1. Το RDF/S μοντέλο (σχήμα και αντικείμενα).
 2. Η αναφορά (report). 
-3. ● [Check Online Docs](https://docs.google.com/document/d/1ZIalINvLoVWyfHmywguXLhJw3PTzobgYhQ6ZtRkdwj4/edit)
+* [Check Online Docs](https://docs.google.com/document/d/1ZIalINvLoVWyfHmywguXLhJw3PTzobgYhQ6ZtRkdwj4/edit)
 
 ### :eyes: Οδηγίες υποβολής
 ● Η εργασία θα πρέπει να γίνει σε ομάδες των δύο ατόμων.
