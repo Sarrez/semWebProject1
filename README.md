@@ -48,9 +48,8 @@ o Θα πρέπει να αναφέρεται στο υλικό που θα πα
 o Οτιδήποτε άλλο κρίνετε απαραίτητο να συμπεριληφθεί στην αναφορά (report).
 
 ### :eyes: Υλικό προς παράδοση
-● Το RDF/S μοντέλο (σχήμα και αντικείμενα).
-
-● Η αναφορά (report).
+1. Το RDF/S μοντέλο (σχήμα και αντικείμενα).
+2. Η αναφορά (report).
 
 *link-->https://docs.google.com/document/d/1ZIalINvLoVWyfHmywguXLhJw3PTzobgYhQ6ZtRkdwj4/edit
 
