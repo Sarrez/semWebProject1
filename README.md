@@ -97,14 +97,19 @@ rdfs:comment, rdfs:label, κτλ. μπορείτε να έχετε ελληνι�
 
 ### :eyes: -Usefull resources-
 A] About TopBraid Composer
+
   -https://www.topquadrant.com/resources/products/docs/TBC-Getting-Started-Guide52.pdf
+  
   -https://drive.google.com/file/u/1/d/10sFCQzHeByAO76Q4qmg1izyrmLsbQCtr/view?usp=sharing
   
 B] About the visualization of what we are doing 
+
   -http://owlgred.lumii.lv/online_visualization
   
 C] About online books
+
   -https://oiipdf.com/download/learning-sparql-2nd-edition
+  
   -https://repository.kallipos.gr/bitstream/11419/1338/1/lodbook.pdf
 
 D] About already existing projects that probably can help
@@ -116,4 +121,5 @@ D] About already existing projects that probably can help
   -https://ijosblog.blogspot.com/2011/12/towards-ontology-of-coffee-drinks.html
   
 E] About other stuff  
+
   -https://www.w3.org/TR/rdf-schema/#ch_resource
