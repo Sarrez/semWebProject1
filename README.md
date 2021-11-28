@@ -77,19 +77,19 @@ rdfs:comment, rdfs:label, κτλ. μπορείτε να έχετε ελληνι�
 1. About TopBraid Composer  
 *[Classes Properties Vocabularies](https://www.w3.org/TR/rdf-schema/#ch_resourcef)  
 *[Online Full Documentation](https://www.topquadrant.com/resources/products/docs/TBC-Getting-Started-Guide52.pdf)    
-*[Greek small intro on the tool](https://drive.google.com/file/u/1/d/10sFCQzHeByAO76Q4qmg1izyrmLsbQCtr/view?usp=sharing)
+*[Greek small intro on the tool](https://drive.google.com/file/u/1/d/10sFCQzHeByAO76Q4qmg1izyrmLsbQCtr/view?usp=sharing)  
   
 2. About the visualization of what we are doing 
-*[online tool](http://owlgred.lumii.lv/online_visualization)
+*[online tool](http://owlgred.lumii.lv/online_visualization)  
  
-3. About online books
-*[SPARQL BOOK](https://oiipdf.com/download/learning-sparql-2nd-edition)
-*[GREEK BOOK](https://repository.kallipos.gr/bitstream/11419/1338/1/lodbook.pdf)
+3. About online books  
+*[SPARQL BOOK](https://oiipdf.com/download/learning-sparql-2nd-edition)  
+*[GREEK BOOK](https://repository.kallipos.gr/bitstream/11419/1338/1/lodbook.pdf)  
 
-4. About already existing projects that probably can help
-*[Library example](https://www.academia.edu/43397028/%CE%A3%CE%B7%CE%BC%CE%B1%CF%83%CE%B9%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%BA%CF%8C%CF%82_%CE%99%CF%83%CF%84%CF%8C%CF%82_%CE%9C%CE%BF%CE%BD%CF%84%CE%B5%CE%BB%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%83%CE%B7_%CE%A3%CF%85%CF%83%CF%84%CE%AE%CE%BC%CE%B1%CF%84%CE%BF%CF%82_%CE%94%CE%B9%CE%B1%CF%87%CE%B5%CE%AF%CF%81%CE%B9%CF%83%CE%B7%CF%82_%CE%92%CE%B9%CE%B2%CE%BB%CE%B9%CE%BF%CE%B8%CE%AE%CE%BA%CE%B7%CF%82_%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%B7%CE%BC%CE%AF%CE%BF%CF%85_Semantic_Web_University_Library_Management_System_Modeling_article_)
-*[Coffee beans example](https://www.researchgate.net/publication/318251533_Expert_System_Based_on_an_Ontology_Method_to_Analyze_Types_of_Arabica_Coffee_Beans)
-*[Coffee Drinks example](https://ijosblog.blogspot.com/2011/12/towards-ontology-of-coffee-drinks.html)
+4. About already existing projects that probably can help  
+*[Library example](https://www.academia.edu/43397028/%CE%A3%CE%B7%CE%BC%CE%B1%CF%83%CE%B9%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%BA%CF%8C%CF%82_%CE%99%CF%83%CF%84%CF%8C%CF%82_%CE%9C%CE%BF%CE%BD%CF%84%CE%B5%CE%BB%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%83%CE%B7_%CE%A3%CF%85%CF%83%CF%84%CE%AE%CE%BC%CE%B1%CF%84%CE%BF%CF%82_%CE%94%CE%B9%CE%B1%CF%87%CE%B5%CE%AF%CF%81%CE%B9%CF%83%CE%B7%CF%82_%CE%92%CE%B9%CE%B2%CE%BB%CE%B9%CE%BF%CE%B8%CE%AE%CE%BA%CE%B7%CF%82_%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%B7%CE%BC%CE%AF%CE%BF%CF%85_Semantic_Web_University_Library_Management_System_Modeling_article_)  
+*[Coffee beans example](https://www.researchgate.net/publication/318251533_Expert_System_Based_on_an_Ontology_Method_to_Analyze_Types_of_Arabica_Coffee_Beans)  
+*[Coffee Drinks example](https://ijosblog.blogspot.com/2011/12/towards-ontology-of-coffee-drinks.html)  
   
 4. About other stuff  
 
