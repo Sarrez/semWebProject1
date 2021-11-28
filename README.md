@@ -50,6 +50,7 @@ o Οτιδήποτε άλλο κρίνετε απαραίτητο να συμπ�
 ### :eyes: Υλικό προς παράδοση
 1. Το RDF/S μοντέλο (σχήμα και αντικείμενα).
 2. Η αναφορά (report).
+
 ● [Check Online Docs](https://docs.google.com/document/d/1ZIalINvLoVWyfHmywguXLhJw3PTzobgYhQ6ZtRkdwj4/edit)
 
 ### :eyes: Οδηγίες υποβολής
