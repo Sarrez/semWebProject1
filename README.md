@@ -84,10 +84,11 @@ rdfs:comment, rdfs:label, κτλ. μπορείτε να έχετε ελληνι�
 2. About the visualization of what we are doing  
 * [online tool](http://owlgred.lumii.lv/online_visualization)  
  
-3. About online books  
+3. About online books / guides 
 * [SPARQL BOOK](https://oiipdf.com/download/learning-sparql-2nd-edition)  
 * [GREEK BOOK](https://repository.kallipos.gr/bitstream/11419/1338/1/lodbook.pdf)  
 * [Introduction to Semantic Web](https://www.w3.org/2009/Talks/0615-SanJose-tutorial-IH/Slides.pdf)
+* [W3C RDF PRIMER] (https://www.w3.org/TR/2014/NOTE-rdf11-primer-20140624/#section-vocabulary)
 
 4. About already existing projects that probably can help  
 * [Library example](https://www.academia.edu/43397028/%CE%A3%CE%B7%CE%BC%CE%B1%CF%83%CE%B9%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%BA%CF%8C%CF%82_%CE%99%CF%83%CF%84%CF%8C%CF%82_%CE%9C%CE%BF%CE%BD%CF%84%CE%B5%CE%BB%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%83%CE%B7_%CE%A3%CF%85%CF%83%CF%84%CE%AE%CE%BC%CE%B1%CF%84%CE%BF%CF%82_%CE%94%CE%B9%CE%B1%CF%87%CE%B5%CE%AF%CF%81%CE%B9%CF%83%CE%B7%CF%82_%CE%92%CE%B9%CE%B2%CE%BB%CE%B9%CE%BF%CE%B8%CE%AE%CE%BA%CE%B7%CF%82_%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%B7%CE%BC%CE%AF%CE%BF%CF%85_Semantic_Web_University_Library_Management_System_Modeling_article_)  
