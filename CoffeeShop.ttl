@@ -16,6 +16,10 @@ CoffeeShop:AlchoholicDrink
   rdfs:label "Drink" ;
   rdfs:subClassOf CoffeeShop:Drink ;
 .
+CoffeeShop:AlchoholicDrink_1
+  a CoffeeShop:AlchoholicDrink ;
+  rdfs:label "Price" ;
+.
 CoffeeShop:Barista
   a rdfs:Class ;
   rdfs:label "Drink" ;
@@ -29,10 +33,9 @@ CoffeeShop:Cocktail
   a rdfs:Class ;
   rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
 .
-CoffeeShop:Coffee
-  a rdfs:Class ;
-  rdfs:label "Drink" ;
-  rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
+CoffeeShop:Cocktail_1
+  a CoffeeShop:Cocktail ;
+  rdfs:label "Price" ;
 .
 CoffeeShop:Drink
   a rdfs:Class ;
@@ -50,6 +53,19 @@ CoffeeShop:Drink_2
 CoffeeShop:Drink_3
   a CoffeeShop:Drink ;
   rdfs:label "person1" ;
+.
+CoffeeShop:Drink_4
+  a CoffeeShop:Drink ;
+  rdfs:label "price" ;
+.
+CoffeeShop:Drink_5
+  a CoffeeShop:Drink ;
+  rdfs:label "Price" ;
+.
+CoffeeShop:Drink_6
+  a CoffeeShop:Drink ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
+  rdfs:label "Price" ;
 .
 CoffeeShop:NonAlchoholicDrink
   a rdfs:Class ;
@@ -69,6 +85,15 @@ CoffeeShop:Person_2
   a CoffeeShop:Person ;
   rdfs:label "person1" ;
 .
+CoffeeShop:Person_3
+  a CoffeeShop:Person ;
+  rdfs:label "price" ;
+.
+CoffeeShop:Price
+  a rdfs:Class ;
+  rdfs:label "Price" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
 CoffeeShop:Server
   a rdfs:Class ;
   rdfs:label "Drink" ;
@@ -84,12 +109,76 @@ CoffeeShop:Supplier
   rdfs:label "person1" ;
   rdfs:subClassOf CoffeeShop:Person ;
 .
+CoffeeShop:Supplier_1
+  a CoffeeShop:Supplier ;
+  rdfs:label "Price" ;
+.
 CoffeeShop:Tea
   a rdfs:Class ;
-  rdfs:label "Drink" ;
+  rdfs:label "Price" ;
   rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
 .
 CoffeeShop:Wine
   a rdfs:Class ;
   rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
+.
+CoffeeShop:Wine_1
+  a CoffeeShop:Wine ;
+  rdfs:label "Price" ;
+.
+CoffeeShop:alchohol
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:AlchoholicDrink ;
+  rdfs:label "Price" ;
+.
+CoffeeShop:arfgsdfa
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:Drink ;
+  rdfs:label "Price" ;
+  rdfs:range xsd:string ;
+.
+CoffeeShop:drinkName
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:Drink ;
+  rdfs:label "Drink Name" ;
+  rdfs:range xsd:string ;
+.
+CoffeeShop:drinkPrice
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:Drink ;
+  rdfs:label "Price" ;
+  rdfs:range CoffeeShop:Price ;
+.
+CoffeeShop:firstName
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:Person ;
+  rdfs:label "price" ;
+  rdfs:range xsd:string ;
+.
+CoffeeShop:lastName
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:Person ;
+  rdfs:label "price" ;
+  rdfs:range xsd:string ;
+.
+CoffeeShop:shift
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:Staff ;
+  rdfs:label "Price" ;
+.
+CoffeeShop:suppliedBy
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:Drink ;
+  rdfs:label "Price" ;
+  rdfs:range CoffeeShop:Supplier ;
+.
+CoffeeShop:typeOfDrink
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:NonAlchoholicDrink ;
+  rdfs:label "Price" ;
+.
+CoffeeShop:typeOfTea
+  a rdf:Property ;
+  rdfs:label "Price" ;
+  rdfs:range xsd:string ;
 .
