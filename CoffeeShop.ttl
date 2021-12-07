@@ -9,238 +9,287 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://test1.project.rdfs/CoffeeShop>
-  a owl:Ontology ;
+  rdf:type owl:Ontology ;
   spin:imports <http://topbraid.org/spin/rdfsplus> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 CoffeeShop:AlchoholicDrink
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Drink" ;
   rdfs:subClassOf CoffeeShop:Drink ;
 .
+CoffeeShop:AppleJuice
+  rdf:type CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
+  rdfs:label "Apple juice" ;
+.
+CoffeeShop:Apple_Juice
+  rdf:type CoffeeShop:Juice ;
+  CoffeeShop:amountOfCaffeine "0%" ;
+  CoffeeShop:drinkPrice 2.20 ;
+  CoffeeShop:madeWith CoffeeShop:AppleJuice ;
+  CoffeeShop:preparationTime "1 minute" ;
+  CoffeeShop:typeOfDrink "Apple Juice" ;
+  rdfs:label "Apple Juice" ;
+.
 CoffeeShop:Arrival
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Arrival" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 CoffeeShop:Barista
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Drink" ;
   rdfs:subClassOf CoffeeShop:Staff ;
 .
 CoffeeShop:Barista_1
-  a CoffeeShop:Barista ;
+  rdf:type CoffeeShop:Barista ;
   CoffeeShop:birthday "2002-04-12"^^xsd:date ;
   CoffeeShop:firstName "Pavlos" ;
   CoffeeShop:lastName "Petrou" ;
   CoffeeShop:mobileNumber "+306922324672" ;
   CoffeeShop:staffPayment CoffeeShop:baristaWage ;
-  CoffeeShop:worksInside true ;
-  CoffeeShop:worksOutside false ;
+  CoffeeShop:worksInside "true"^^xsd:boolean ;
+  CoffeeShop:worksOutside "false"^^xsd:boolean ;
   rdfs:label "Barista" ;
 .
 CoffeeShop:Barista_2
-  a CoffeeShop:Barista ;
+  rdf:type CoffeeShop:Barista ;
   CoffeeShop:birthday "1995-07-27"^^xsd:date ;
   CoffeeShop:firstName "Giorgos" ;
   CoffeeShop:lastName "Tzaras" ;
   CoffeeShop:mobileNumber "+306931323332" ;
   CoffeeShop:staffPayment CoffeeShop:baristaWage ;
-  CoffeeShop:worksInside true ;
-  CoffeeShop:worksOutside false ;
+  CoffeeShop:worksInside "true"^^xsd:boolean ;
+  CoffeeShop:worksOutside "false"^^xsd:boolean ;
   rdfs:label "Barista" ;
 .
 CoffeeShop:Barista_3
-  a CoffeeShop:Barista ;
+  rdf:type CoffeeShop:Barista ;
   CoffeeShop:birthday "1994-10-11"^^xsd:date ;
   CoffeeShop:firstName "Eleftheria" ;
   CoffeeShop:lastName "Karadhmou" ;
   CoffeeShop:mobileNumber "+306922398222" ;
   CoffeeShop:staffPayment CoffeeShop:baristaWage ;
-  CoffeeShop:worksInside true ;
-  CoffeeShop:worksOutside false ;
+  CoffeeShop:worksInside "true"^^xsd:boolean ;
+  CoffeeShop:worksOutside "false"^^xsd:boolean ;
   rdfs:label "Barista" ;
 .
 CoffeeShop:Barista_4
-  a CoffeeShop:Barista ;
+  rdf:type CoffeeShop:Barista ;
   CoffeeShop:birthday "1996-02-19"^^xsd:date ;
   CoffeeShop:firstName "Katerina" ;
   CoffeeShop:lastName "Ioannidou" ;
   CoffeeShop:mobileNumber "+306921946679" ;
   CoffeeShop:staffPayment CoffeeShop:baristaWage ;
-  CoffeeShop:worksInside true ;
-  CoffeeShop:worksOutside false ;
+  CoffeeShop:worksInside "true"^^xsd:boolean ;
+  CoffeeShop:worksOutside "false"^^xsd:boolean ;
   rdfs:label "Barista" ;
 .
 CoffeeShop:Beer
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
 .
+CoffeeShop:BeerDrink
+  rdf:type CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_5 ;
+  rdfs:label "Beer drink" ;
+.
+CoffeeShop:Beer_Blond
+  rdf:type CoffeeShop:Beer ;
+  CoffeeShop:amountOfAlcohol 7.5 ;
+  CoffeeShop:drinkPrice "5"^^xsd:decimal ;
+  CoffeeShop:madeWith CoffeeShop:BeerDrink ;
+  CoffeeShop:preparationTime "30 seconds" ;
+  CoffeeShop:typeOfDrink "Blond Beer" ;
+  rdfs:label "Beer Blond" ;
+.
+CoffeeShop:Beer_Red
+  rdf:type CoffeeShop:Beer ;
+  CoffeeShop:amountOfAlcohol 9.6 ;
+  CoffeeShop:drinkPrice "5"^^xsd:decimal ;
+  CoffeeShop:madeWith CoffeeShop:BeerDrink ;
+  CoffeeShop:preparationTime "30 seconds" ;
+  CoffeeShop:typeOfDrink "Red Beer" ;
+  rdfs:label "Beer red" ;
+.
 CoffeeShop:Beverage
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Beverage" ;
   rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
 .
+CoffeeShop:Bitters
+  rdf:type CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_6 ;
+  rdfs:label "Cocktail Bitters" ;
+.
 CoffeeShop:BlackTeaLeaves
-  a CoffeeShop:Supply ;
-  rdfs:label "BlackTeaLeaves" ;
+  rdf:type CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
+  rdfs:label "Black Tea Leaves" ;
 .
 CoffeeShop:Cashier
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Cashier" ;
   rdfs:subClassOf CoffeeShop:Staff ;
 .
 CoffeeShop:Client
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Client" ;
   rdfs:subClassOf CoffeeShop:Person ;
 .
 CoffeeShop:Client_10
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "2002-04-29"^^xsd:date ;
   CoffeeShop:firstName "Filippos" ;
-  CoffeeShop:isSmoking true ;
+  CoffeeShop:isSmoking "true"^^xsd:boolean ;
   CoffeeShop:lastName "Petridis" ;
   CoffeeShop:mobileNumber "+306912345678" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_11
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "1994-01-24"^^xsd:date ;
   CoffeeShop:firstName "Voula" ;
-  CoffeeShop:isSmoking true ;
+  CoffeeShop:isSmoking "true"^^xsd:boolean ;
   CoffeeShop:lastName "Ouzouni" ;
   CoffeeShop:mobileNumber "+306912345678" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_12
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "1992-02-10"^^xsd:date ;
   CoffeeShop:firstName "Eleni" ;
-  CoffeeShop:isSmoking true ;
+  CoffeeShop:isSmoking "true"^^xsd:boolean ;
   CoffeeShop:lastName "Alexandrakou" ;
   CoffeeShop:mobileNumber "+306912345678" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_13
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "1989-01-12"^^xsd:date ;
   CoffeeShop:firstName "Fotis" ;
-  CoffeeShop:isSmoking true ;
+  CoffeeShop:isSmoking "true"^^xsd:boolean ;
   CoffeeShop:lastName "Natsis" ;
   CoffeeShop:mobileNumber "+306912345678" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_2
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "1993-03-02"^^xsd:date ;
   CoffeeShop:firstName "Marina" ;
-  CoffeeShop:isSmoking false ;
+  CoffeeShop:isSmoking "false"^^xsd:boolean ;
   CoffeeShop:lastName "Ioannou" ;
   CoffeeShop:mobileNumber "+306923491283" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_3
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "1990-11-05"^^xsd:date ;
   CoffeeShop:firstName "Sakis" ;
-  CoffeeShop:isSmoking false ;
+  CoffeeShop:isSmoking "false"^^xsd:boolean ;
   CoffeeShop:lastName "Kontaras" ;
   CoffeeShop:mobileNumber "+306945121283" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_4
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "1982-07-11"^^xsd:date ;
   CoffeeShop:firstName "Kuriaki" ;
-  CoffeeShop:isSmoking true ;
+  CoffeeShop:isSmoking "true"^^xsd:boolean ;
   CoffeeShop:lastName "Raptaki" ;
   CoffeeShop:mobileNumber "+3069109430" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_5
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "2000-05-02"^^xsd:date ;
   CoffeeShop:firstName "Anastasios" ;
-  CoffeeShop:isSmoking false ;
+  CoffeeShop:isSmoking "false"^^xsd:boolean ;
   CoffeeShop:lastName "Kuriakidis" ;
   CoffeeShop:mobileNumber "+306923591132" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_6
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "2000-02-19"^^xsd:date ;
   CoffeeShop:firstName "Maria" ;
-  CoffeeShop:isSmoking true ;
+  CoffeeShop:isSmoking "true"^^xsd:boolean ;
   CoffeeShop:lastName "Fotakidou" ;
   CoffeeShop:mobileNumber "+306912345678" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_7
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "1994-12-22"^^xsd:date ;
   CoffeeShop:firstName "Kostantinous" ;
-  CoffeeShop:isSmoking true ;
+  CoffeeShop:isSmoking "true"^^xsd:boolean ;
   CoffeeShop:lastName "Metakidis" ;
   CoffeeShop:mobileNumber "+306912345678" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_8
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "1994-10-30"^^xsd:date ;
   CoffeeShop:firstName "Alexandra" ;
-  CoffeeShop:isSmoking false ;
+  CoffeeShop:isSmoking "false"^^xsd:boolean ;
   CoffeeShop:lastName "Tamoulxidou" ;
   CoffeeShop:mobileNumber "+306912345678" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Client_9
-  a CoffeeShop:Client ;
+  rdf:type CoffeeShop:Client ;
   CoffeeShop:birthday "2003-05-05"^^xsd:date ;
   CoffeeShop:firstName "Timos" ;
-  CoffeeShop:isSmoking true ;
+  CoffeeShop:isSmoking "true"^^xsd:boolean ;
   CoffeeShop:lastName "Terkenlis" ;
   CoffeeShop:mobileNumber "+306912345678" ;
   rdfs:label "Client" ;
 .
 CoffeeShop:Cocktail
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
 .
 CoffeeShop:Coffee
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Coffee" ;
   rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
 .
-CoffeeShop:CoffeeBeans1
-  a CoffeeShop:Supply ;
-  CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
-  rdfs:label "Supplier" ;
-.
-CoffeeShop:CoffeeBeans_2
-  a CoffeeShop:Supply ;
+CoffeeShop:CoffeeBeans_Arabika
+  rdf:type CoffeeShop:Supply ;
   CoffeeShop:suppliedBy CoffeeShop:Supplier_2 ;
-  rdfs:label "CoffeeBeans" ;
+  rdfs:label "Coffee Beans Arabika" ;
 .
-CoffeeShop:Coffee_1
-  a CoffeeShop:Coffee ;
-  CoffeeShop:madeWith CoffeeShop:CoffeeBeans1 ;
-  CoffeeShop:typeOfDrink "filter" ;
-  rdfs:label "Coffee" ;
+CoffeeShop:CoffeeBeans_Robusta
+  rdf:type CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
+  rdfs:label "Coffee Beens Robusta" ;
 .
-CoffeeShop:Coffee_2
-  a CoffeeShop:Coffee ;
-  CoffeeShop:madeWith CoffeeShop:CoffeeBeans_2 ;
+CoffeeShop:Coffee_Espresso
+  rdf:type CoffeeShop:Coffee ;
+  CoffeeShop:amountOfCaffeine "24%" ;
+  CoffeeShop:drinkPrice 3.0 ;
+  CoffeeShop:madeWith CoffeeShop:CoffeeBeans_Arabika ;
+  CoffeeShop:preparationTime "4 minutes" ;
   CoffeeShop:typeOfDrink "espresso" ;
-  rdfs:label "Supply" ;
+  rdfs:label "Coffee Espresso" ;
+.
+CoffeeShop:Coffee_Filter
+  rdf:type CoffeeShop:Coffee ;
+  CoffeeShop:amountOfCaffeine "16%" ;
+  CoffeeShop:drinkPrice 2.80 ;
+  CoffeeShop:madeWith CoffeeShop:CoffeeBeans_Robusta ;
+  CoffeeShop:preparationTime "6 minutes" ;
+  CoffeeShop:typeOfDrink "filter" ;
+  rdfs:label "Coffee Filter" ;
 .
 CoffeeShop:Drink
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Drink" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 CoffeeShop:EveningShift1
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
   CoffeeShop:day "Monday" ;
   CoffeeShop:endingTime "01:00:00"^^xsd:time ;
@@ -249,7 +298,7 @@ CoffeeShop:EveningShift1
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift2
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
   CoffeeShop:day "Tuesday" ;
   CoffeeShop:endingTime "01:00:00"^^xsd:time ;
@@ -258,7 +307,7 @@ CoffeeShop:EveningShift2
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift3
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_4 ;
   CoffeeShop:day "Wednesday" ;
   CoffeeShop:endingTime "01:00:00"^^xsd:time ;
@@ -267,7 +316,7 @@ CoffeeShop:EveningShift3
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift4
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_4 ;
   CoffeeShop:day "Thursday" ;
   CoffeeShop:endingTime "01:00:00"^^xsd:time ;
@@ -276,7 +325,7 @@ CoffeeShop:EveningShift4
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift5
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
   CoffeeShop:day "Friday" ;
   CoffeeShop:endingTime "01:00:00"^^xsd:time ;
@@ -285,7 +334,7 @@ CoffeeShop:EveningShift5
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift6
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
   CoffeeShop:day "Saturday" ;
   CoffeeShop:endingTime "01:00:00"^^xsd:time ;
@@ -294,7 +343,7 @@ CoffeeShop:EveningShift6
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift7
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
   CoffeeShop:day "Sunday" ;
   CoffeeShop:endingTime "01:00:00"^^xsd:time ;
@@ -303,70 +352,66 @@ CoffeeShop:EveningShift7
   rdfs:label "Shift" ;
 .
 CoffeeShop:FridayArrival_1
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Friday" ;
   CoffeeShop:comingTime "08:30:00"^^xsd:time ;
   CoffeeShop:leavingTime "10:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:FridayArrival_2
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Friday" ;
   CoffeeShop:comingTime "09:12:00"^^xsd:time ;
   CoffeeShop:leavingTime "11:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:FridayArrival_3
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Friday" ;
   CoffeeShop:comingTime "19:12:00"^^xsd:time ;
   CoffeeShop:leavingTime "21:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:Juice
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Juice" ;
   rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
 .
-CoffeeShop:Juice_1
-  a CoffeeShop:Juice ;
-  rdfs:label "Juice" ;
-.
 CoffeeShop:Mocktail
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Mocktail" ;
   rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
 .
 CoffeeShop:MondayArrival_1
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Monday" ;
   CoffeeShop:comingTime "08:32:00"^^xsd:time ;
   CoffeeShop:leavingTime "11:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:MondayArrival_2
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Monday" ;
   CoffeeShop:comingTime "19:00:00"^^xsd:time ;
   CoffeeShop:leavingTime "21:33:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:MondayArrival_3
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Monday" ;
   CoffeeShop:comingTime "23:00:00"^^xsd:time ;
   CoffeeShop:leavingTime "00:45:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:MondayArrival_4
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Monday" ;
   CoffeeShop:comingTime "22:12:00"^^xsd:time ;
   CoffeeShop:leavingTime "01:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:MorningShift1
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
   CoffeeShop:day "Monday" ;
   CoffeeShop:endingTime "17:00:00"^^xsd:time ;
@@ -375,7 +420,7 @@ CoffeeShop:MorningShift1
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift2
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
   CoffeeShop:day "Tuesday" ;
   CoffeeShop:endingTime "16:00:00"^^xsd:time ;
@@ -384,7 +429,7 @@ CoffeeShop:MorningShift2
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift3
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
   CoffeeShop:day "Wednesday" ;
   CoffeeShop:endingTime "16:00:00"^^xsd:time ;
@@ -393,7 +438,7 @@ CoffeeShop:MorningShift3
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift4
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_2 ;
   CoffeeShop:day "Thursday" ;
   CoffeeShop:endingTime "17:00:00"^^xsd:time ;
@@ -402,7 +447,7 @@ CoffeeShop:MorningShift4
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift5
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_2 ;
   CoffeeShop:day "Friday" ;
   CoffeeShop:endingTime "16:00:00"^^xsd:time ;
@@ -411,7 +456,7 @@ CoffeeShop:MorningShift5
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift6
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
   CoffeeShop:day "Saturday" ;
   CoffeeShop:endingTime "17:00:00"^^xsd:time ;
@@ -420,7 +465,7 @@ CoffeeShop:MorningShift6
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift7
-  a CoffeeShop:Shift ;
+  rdf:type CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
   CoffeeShop:day "Sunday" ;
   CoffeeShop:endingTime "16:00:00"^^xsd:time ;
@@ -429,267 +474,323 @@ CoffeeShop:MorningShift7
   rdfs:label "Shift" ;
 .
 CoffeeShop:NonAlchoholicDrink
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Drink" ;
   rdfs:subClassOf CoffeeShop:Drink ;
 .
 CoffeeShop:Order
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Order" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 CoffeeShop:Order_1
-  a CoffeeShop:Order ;
+  rdf:type CoffeeShop:Order ;
   CoffeeShop:clientArrival CoffeeShop:MondayArrival_1 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Juice_1 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Apple_Juice ;
   CoffeeShop:madeBy CoffeeShop:Barista_3 ;
   CoffeeShop:orderedBy CoffeeShop:Client_13 ;
   CoffeeShop:servedBy CoffeeShop:Server_4 ;
   rdfs:label "Order" ;
 .
-CoffeeShop:Order_2
-  a CoffeeShop:Order ;
-  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_1 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Tea_1 ;
-  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_12 ;
-  CoffeeShop:servedBy CoffeeShop:Server_4 ;
-  rdfs:label "Order" ;
-.
-CoffeeShop:Order_3
-  a CoffeeShop:Order ;
-  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_2 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Coffee_1 ;
-  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_11 ;
-  CoffeeShop:servedBy CoffeeShop:Server_3 ;
-  rdfs:label "Order" ;
-.
-CoffeeShop:Order_4
-  a CoffeeShop:Order ;
-  CoffeeShop:clientArrival CoffeeShop:MondayArrival_2 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Juice_1 ;
-  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_2 ;
-  CoffeeShop:servedBy CoffeeShop:Server_4 ;
-  rdfs:label "Order" ;
-.
-CoffeeShop:Order_5
-  a CoffeeShop:Order ;
-  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_4 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Tea_1 ;
-  CoffeeShop:madeBy CoffeeShop:Barista_4 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_7 ;
-  CoffeeShop:servedBy CoffeeShop:Server_3 ;
-  rdfs:label "Order" ;
-.
-CoffeeShop:Order_6
-  a CoffeeShop:Order ;
-  CoffeeShop:clientArrival CoffeeShop:FridayArrival_1 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Coffee_1 ;
-  CoffeeShop:madeBy CoffeeShop:Barista_2 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_9 ;
-  CoffeeShop:servedBy CoffeeShop:Server_1 ;
-  rdfs:label "Order" ;
-.
-CoffeeShop:Order_7
-  a CoffeeShop:Order ;
-  CoffeeShop:clientArrival CoffeeShop:TuesdayArrival_3 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Juice_1 ;
-  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_8 ;
-  CoffeeShop:servedBy CoffeeShop:Server_4 ;
-  rdfs:label "Order" ;
-.
-CoffeeShop:Order_8
-  a CoffeeShop:Order ;
-  CoffeeShop:clientArrival CoffeeShop:SundayArrival_2;
-  CoffeeShop:drinkOrdered CoffeeShop:Tea_1 ;
-  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_3 ;
-  CoffeeShop:servedBy CoffeeShop:Server_3 ;
-  rdfs:label "Order" ;
-.
-CoffeeShop:Order_9
-  a CoffeeShop:Order ;
-  CoffeeShop:clientArrival CoffeeShop:SundayArrival_3 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Coffee_1 ;
-  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_4 ;
-  CoffeeShop:servedBy CoffeeShop:Server_3 ;
-  rdfs:label "Order" ;
-.
 CoffeeShop:Order_10
-  a CoffeeShop:Order ;
+  rdf:type CoffeeShop:Order ;
   CoffeeShop:clientArrival CoffeeShop:SaturdayArrival_1 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Juice_1 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Apple_Juice ;
   CoffeeShop:madeBy CoffeeShop:Barista_1 ;
   CoffeeShop:orderedBy CoffeeShop:Client_2 ;
   CoffeeShop:servedBy CoffeeShop:Server_1 ;
   rdfs:label "Order" ;
 .
 CoffeeShop:Order_11
-  a CoffeeShop:Order ;
-  CoffeeShop:clientArrival CoffeeShop:SaturdayArrival_4;
-  CoffeeShop:drinkOrdered CoffeeShop:Tea_1 ;
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:SaturdayArrival_4 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Tea_Mountain ;
   CoffeeShop:madeBy CoffeeShop:Barista_3 ;
   CoffeeShop:orderedBy CoffeeShop:Client_11 ;
   CoffeeShop:servedBy CoffeeShop:Server_3 ;
   rdfs:label "Order" ;
 .
 CoffeeShop:Order_12
-  a CoffeeShop:Order ;
+  rdf:type CoffeeShop:Order ;
   CoffeeShop:clientArrival CoffeeShop:ThursdayArrival_1 ;
-  CoffeeShop:drinkOrdered CoffeeShop:Coffee_1 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Coffee_Filter ;
   CoffeeShop:madeBy CoffeeShop:Barista_2 ;
   CoffeeShop:orderedBy CoffeeShop:Client_13 ;
   CoffeeShop:servedBy CoffeeShop:Server_2 ;
   rdfs:label "Order" ;
 .
+CoffeeShop:Order_13
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_2 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Beer_Blond ;
+  CoffeeShop:drinkOrdered CoffeeShop:Beer_Red ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_13 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order 13" ;
+.
+CoffeeShop:Order_14
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:FridayArrival_3 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Tequila_Yellow ;
+  CoffeeShop:drinkOrdered CoffeeShop:Whisky_Burbon ;
+  CoffeeShop:drinkOrdered CoffeeShop:Wine_Red ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_7 ;
+  CoffeeShop:servedBy CoffeeShop:Server_2 ;
+  rdfs:label "Order 14" ;
+.
+CoffeeShop:Order_15
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:TuesdayArrival_3 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Rum_Black ;
+  CoffeeShop:drinkOrdered CoffeeShop:Whisky_Burbon ;
+  CoffeeShop:drinkOrdered CoffeeShop:Whisky_Smoked ;
+  CoffeeShop:drinkOrdered CoffeeShop:Wine_White ;
+  CoffeeShop:madeBy CoffeeShop:Barista_4 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_7 ;
+  CoffeeShop:servedBy CoffeeShop:Server_2 ;
+  rdfs:label "Order 15" ;
+.
+CoffeeShop:Order_2
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_1 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Tea_Mountain ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_12 ;
+  CoffeeShop:servedBy CoffeeShop:Server_4 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_3
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_2 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Coffee_Filter ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_11 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_4
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:MondayArrival_2 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Apple_Juice ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_2 ;
+  CoffeeShop:servedBy CoffeeShop:Server_4 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_5
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_4 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Tea_Mountain ;
+  CoffeeShop:madeBy CoffeeShop:Barista_4 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_7 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_6
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:FridayArrival_1 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Coffee_Filter ;
+  CoffeeShop:madeBy CoffeeShop:Barista_2 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_9 ;
+  CoffeeShop:servedBy CoffeeShop:Server_1 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_7
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:TuesdayArrival_3 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Apple_Juice ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_8 ;
+  CoffeeShop:servedBy CoffeeShop:Server_4 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_8
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:SundayArrival_2 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Tea_Mountain ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_3 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_9
+  rdf:type CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:SundayArrival_3 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Coffee_Filter ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_4 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order" ;
+.
 CoffeeShop:Person
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Person" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 CoffeeShop:Rum
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Rum" ;
   rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
 .
+CoffeeShop:RumDrink
+  rdf:type CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_5 ;
+  rdfs:label "Rum drink" ;
+.
+CoffeeShop:Rum_Black
+  rdf:type CoffeeShop:Rum ;
+  CoffeeShop:amountOfAlcohol "16"^^xsd:decimal ;
+  CoffeeShop:drinkPrice "7"^^xsd:decimal ;
+  CoffeeShop:madeWith CoffeeShop:RumDrink ;
+  CoffeeShop:preparationTime "5 minutes" ;
+  CoffeeShop:typeOfDrink "Black Rum" ;
+  rdfs:label "Rum Black" ;
+.
+CoffeeShop:Rum_White
+  rdf:type CoffeeShop:Rum ;
+  CoffeeShop:amountOfAlcohol "14"^^xsd:decimal ;
+  CoffeeShop:drinkPrice "7"^^xsd:decimal ;
+  CoffeeShop:madeWith CoffeeShop:RumDrink ;
+  CoffeeShop:preparationTime "5 minutes" ;
+  CoffeeShop:typeOfDrink "White Rum" ;
+  rdfs:label "Rum White" ;
+.
 CoffeeShop:SaturdayArrival_1
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Saturday" ;
   CoffeeShop:comingTime "08:12:00"^^xsd:time ;
   CoffeeShop:leavingTime "10:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SaturdayArrival_2
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Saturday" ;
   CoffeeShop:comingTime "18:12:00"^^xsd:time ;
   CoffeeShop:leavingTime "19:45:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SaturdayArrival_3
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Saturday" ;
   CoffeeShop:comingTime "19:00:00"^^xsd:time ;
   CoffeeShop:leavingTime "21:15:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SaturdayArrival_4
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Saturday" ;
   CoffeeShop:comingTime "21:00:00"^^xsd:time ;
   CoffeeShop:leavingTime "23:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:Server
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Drink" ;
   rdfs:subClassOf CoffeeShop:Staff ;
 .
 CoffeeShop:Server_1
-  a CoffeeShop:Server ;
+  rdf:type CoffeeShop:Server ;
   CoffeeShop:birthday "1993-11-29"^^xsd:date ;
   CoffeeShop:firstName "Kassiopi" ;
   CoffeeShop:lastName "Merakli" ;
   CoffeeShop:mobileNumber "+306921028609" ;
   CoffeeShop:staffPayment CoffeeShop:serverWage ;
-  CoffeeShop:worksInside true ;
-  CoffeeShop:worksOutside true ;
+  CoffeeShop:worksInside "true"^^xsd:boolean ;
+  CoffeeShop:worksOutside "true"^^xsd:boolean ;
   rdfs:label "Server" ;
 .
 CoffeeShop:Server_2
-  a CoffeeShop:Server ;
+  rdf:type CoffeeShop:Server ;
   CoffeeShop:birthday "1997-02-22"^^xsd:date ;
   CoffeeShop:firstName "Drosoula" ;
   CoffeeShop:lastName "Kexagia" ;
   CoffeeShop:mobileNumber "+306920920172" ;
   CoffeeShop:staffPayment CoffeeShop:serverWage ;
-  CoffeeShop:worksInside true ;
-  CoffeeShop:worksOutside true ;
+  CoffeeShop:worksInside "true"^^xsd:boolean ;
+  CoffeeShop:worksOutside "true"^^xsd:boolean ;
   rdfs:label "Server" ;
 .
 CoffeeShop:Server_3
-  a CoffeeShop:Server ;
+  rdf:type CoffeeShop:Server ;
   CoffeeShop:birthday "1998-11-16"^^xsd:date ;
   CoffeeShop:firstName "Pantelis" ;
   CoffeeShop:lastName "Logothetis" ;
   CoffeeShop:mobileNumber "+306901281732" ;
   CoffeeShop:staffPayment CoffeeShop:serverWage ;
-  CoffeeShop:worksInside true ;
-  CoffeeShop:worksOutside true ;
+  CoffeeShop:worksInside "true"^^xsd:boolean ;
+  CoffeeShop:worksOutside "true"^^xsd:boolean ;
   rdfs:label "Server" ;
 .
 CoffeeShop:Server_4
-  a CoffeeShop:Server ;
+  rdf:type CoffeeShop:Server ;
   CoffeeShop:birthday "2001-09-01"^^xsd:date ;
   CoffeeShop:firstName "Leonidas" ;
   CoffeeShop:lastName "Papanikolaou" ;
   CoffeeShop:mobileNumber "+306901324023" ;
   CoffeeShop:staffPayment CoffeeShop:serverWage ;
-  CoffeeShop:worksInside true ;
-  CoffeeShop:worksOutside true ;
+  CoffeeShop:worksInside "true"^^xsd:boolean ;
+  CoffeeShop:worksOutside "true"^^xsd:boolean ;
   rdfs:label "Server" ;
 .
 CoffeeShop:Shift
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Shift" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 CoffeeShop:Staff
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Staff" ;
   rdfs:subClassOf CoffeeShop:Person ;
 .
 CoffeeShop:SundayArrival_1
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
   CoffeeShop:comingTime "10:00:00"^^xsd:time ;
   CoffeeShop:leavingTime "11:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SundayArrival_2
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
   CoffeeShop:comingTime "09:12:00"^^xsd:time ;
   CoffeeShop:leavingTime "11:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SundayArrival_3
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
   CoffeeShop:comingTime "19:30:00"^^xsd:time ;
   CoffeeShop:leavingTime "21:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SundayArrival_4
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
   CoffeeShop:comingTime "22:00:00"^^xsd:time ;
   CoffeeShop:leavingTime "00:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SundayArrival_5
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
   CoffeeShop:comingTime "23:00:00"^^xsd:time ;
   CoffeeShop:leavingTime "01:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:Supervisor
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Supervisor" ;
   rdfs:subClassOf CoffeeShop:Staff ;
 .
 CoffeeShop:Supplier
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Supplier" ;
   rdfs:subClassOf CoffeeShop:Person ;
 .
 CoffeeShop:Supplier_1
-  a CoffeeShop:Supplier ;
+  rdf:type CoffeeShop:Supplier ;
   CoffeeShop:birthday "1973-01-30"^^xsd:date ;
   CoffeeShop:firstName "Giannis" ;
   CoffeeShop:lastName "Mparmpas" ;
@@ -697,7 +798,7 @@ CoffeeShop:Supplier_1
   rdfs:label "Supplier" ;
 .
 CoffeeShop:Supplier_2
-  a CoffeeShop:Supplier ;
+  rdf:type CoffeeShop:Supplier ;
   CoffeeShop:birthday "1969-08-22"^^xsd:date ;
   CoffeeShop:firstName "Grigoris" ;
   CoffeeShop:lastName "Lamprakis" ;
@@ -705,7 +806,7 @@ CoffeeShop:Supplier_2
   rdfs:label "Supplier" ;
 .
 CoffeeShop:Supplier_3
-  a CoffeeShop:Supplier ;
+  rdf:type CoffeeShop:Supplier ;
   CoffeeShop:birthday "1964-09-04"^^xsd:date ;
   CoffeeShop:firstName "Mpampis" ;
   CoffeeShop:lastName "Anastasiou" ;
@@ -713,342 +814,440 @@ CoffeeShop:Supplier_3
   rdfs:label "Supplier" ;
 .
 CoffeeShop:Supplier_4
-  a CoffeeShop:Supplier ;
+  rdf:type CoffeeShop:Supplier ;
   CoffeeShop:birthday "1974-10-21"^^xsd:date ;
   CoffeeShop:firstName "Amalia" ;
   CoffeeShop:lastName "Evagelou" ;
   CoffeeShop:mobileNumber "+306912324000" ;
   rdfs:label "Supplier" ;
 .
+CoffeeShop:Supplier_5
+  rdf:type CoffeeShop:Supplier ;
+  CoffeeShop:birthday "1997-12-08"^^xsd:date ;
+  CoffeeShop:firstName "Grigoris" ;
+  CoffeeShop:lastName "Mauromatis" ;
+  CoffeeShop:mobileNumber "+306974616859" ;
+  rdfs:label "Supplier" ;
+.
+CoffeeShop:Supplier_6
+  rdf:type CoffeeShop:Supplier ;
+  CoffeeShop:birthday "1987-12-02"^^xsd:date ;
+  CoffeeShop:firstName "Manolis" ;
+  CoffeeShop:lastName "Delaportas" ;
+  CoffeeShop:mobileNumber "+30694315862" ;
+  rdfs:label "Supplier" ;
+.
 CoffeeShop:Supply
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Supply" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 CoffeeShop:Tea
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Price" ;
   rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
 .
-CoffeeShop:Tea_1
-  a CoffeeShop:Tea ;
+CoffeeShop:Tea_Green
+  rdf:type CoffeeShop:Tea ;
+  CoffeeShop:amountOfCaffeine "6%" ;
+  CoffeeShop:drinkPrice 2.60 ;
   CoffeeShop:madeWith CoffeeShop:WhiteTeaLeaves ;
-  CoffeeShop:typeOfDrink "black tea" ;
-  rdfs:label "Tea" ;
-.
-CoffeeShop:Tea_2
-  a CoffeeShop:Tea ;
-  CoffeeShop:madeWith CoffeeShop:WhiteTeaLeaves ;
+  CoffeeShop:preparationTime "3 minutes" ;
   CoffeeShop:typeOfDrink "green tea" ;
-  rdfs:label "Tea" ;
+  rdfs:label "Tea Square" ;
 .
-CoffeeShop:Tea_3
-  a CoffeeShop:Tea ;
+CoffeeShop:Tea_Mountain
+  rdf:type CoffeeShop:Tea ;
+  CoffeeShop:amountOfCaffeine "5%" ;
+  CoffeeShop:drinkPrice 2.30 ;
   CoffeeShop:madeWith CoffeeShop:WhiteTeaLeaves ;
+  CoffeeShop:preparationTime "3 minutes" ;
+  CoffeeShop:typeOfDrink "White tea" ;
+  rdfs:label "Tea Mountain" ;
+.
+CoffeeShop:Tea_Square
+  rdf:type CoffeeShop:Tea ;
+  CoffeeShop:amountOfCaffeine "2%" ;
+  CoffeeShop:drinkPrice 2.50 ;
+  CoffeeShop:madeWith CoffeeShop:WhiteTeaLeaves ;
+  CoffeeShop:preparationTime "2 minutes" ;
   CoffeeShop:typeOfDrink "white tea" ;
-  rdfs:label "Tea" ;
+  rdfs:label "Tea Square" ;
 .
 CoffeeShop:Tequila
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Tequila" ;
   rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
 .
+CoffeeShop:TequilaDrink
+  rdf:type CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_5 ;
+  rdfs:label "Tequila drink" ;
+.
+CoffeeShop:Tequila_White
+  rdf:type CoffeeShop:Tequila ;
+  CoffeeShop:amountOfAlcohol "21"^^xsd:decimal ;
+  CoffeeShop:drinkPrice "7"^^xsd:decimal ;
+  CoffeeShop:madeWith CoffeeShop:TequilaDrink ;
+  CoffeeShop:preparationTime "4 minutes" ;
+  CoffeeShop:typeOfDrink "White Tequila" ;
+  rdfs:label "Tequila White" ;
+.
+CoffeeShop:Tequila_Yellow
+  rdf:type CoffeeShop:Tequila ;
+  CoffeeShop:amountOfAlcohol "23"^^xsd:decimal ;
+  CoffeeShop:drinkPrice "8"^^xsd:decimal ;
+  CoffeeShop:madeWith CoffeeShop:TequilaDrink ;
+  CoffeeShop:preparationTime "4 minutes" ;
+  CoffeeShop:typeOfDrink "Yellow Tequila" ;
+  rdfs:label "Tequila Yellow" ;
+.
 CoffeeShop:ThursdayArrival_1
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Thursday" ;
   CoffeeShop:comingTime "10:12:00"^^xsd:time ;
   CoffeeShop:leavingTime "11:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:ThursdayArrival_2
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Thursday" ;
   CoffeeShop:comingTime "11:00:00"^^xsd:time ;
   CoffeeShop:leavingTime "12:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:ThursdayArrival_3
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Thursday" ;
   CoffeeShop:comingTime "19:00:00"^^xsd:time ;
   CoffeeShop:leavingTime "21:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:TuesdayArrival_1
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Tuesday" ;
   CoffeeShop:comingTime "10:55:00"^^xsd:time ;
   CoffeeShop:leavingTime "12:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:TuesdayArrival_2
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Tuesday" ;
   CoffeeShop:comingTime "08:35:00"^^xsd:time ;
   CoffeeShop:leavingTime "10:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:TuesdayArrival_3
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Tuesday" ;
   CoffeeShop:comingTime "18:55:00"^^xsd:time ;
   CoffeeShop:leavingTime "20:20:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:Wage
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Money" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 CoffeeShop:WednesdayArrival_1
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
   CoffeeShop:comingTime "10:55:00"^^xsd:time ;
   CoffeeShop:leavingTime "12:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:WednesdayArrival_2
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
   CoffeeShop:comingTime "08:20:00"^^xsd:time ;
   CoffeeShop:leavingTime "10:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:WednesdayArrival_3
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
   CoffeeShop:comingTime "17:55:00"^^xsd:time ;
   CoffeeShop:leavingTime "19:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:WednesdayArrival_4
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
   CoffeeShop:comingTime "20:55:00"^^xsd:time ;
   CoffeeShop:leavingTime "22:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:WednesdayArrival_5
-  a CoffeeShop:Arrival ;
+  rdf:type CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
   CoffeeShop:comingTime "22:55:00"^^xsd:time ;
   CoffeeShop:leavingTime "00:12:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:Whisky
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:label "Whisky" ;
   rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
 .
+CoffeeShop:WhiskyDrink
+  rdf:type CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_5 ;
+  rdfs:label "Whisky drink" ;
+.
+CoffeeShop:Whisky_Burbon
+  rdf:type CoffeeShop:Whisky ;
+  CoffeeShop:amountOfAlcohol "30"^^xsd:decimal ;
+  CoffeeShop:drinkPrice "9"^^xsd:decimal ;
+  CoffeeShop:madeWith CoffeeShop:WhiskyDrink ;
+  CoffeeShop:preparationTime "2 minutes" ;
+  CoffeeShop:typeOfDrink "Burbon Whisky" ;
+  rdfs:label "Whisky Burbon" ;
+.
+CoffeeShop:Whisky_Irish
+  rdf:type CoffeeShop:Whisky ;
+  CoffeeShop:amountOfAlcohol "38"^^xsd:decimal ;
+  CoffeeShop:drinkPrice "11"^^xsd:decimal ;
+  CoffeeShop:madeWith CoffeeShop:WhiskyDrink ;
+  CoffeeShop:preparationTime "2 minutes" ;
+  CoffeeShop:typeOfDrink "Irish Whisky" ;
+  rdfs:label "Whisky Irish" ;
+.
+CoffeeShop:Whisky_Smoked
+  rdf:type CoffeeShop:Whisky ;
+  CoffeeShop:amountOfAlcohol "33"^^xsd:decimal ;
+  CoffeeShop:drinkPrice "12"^^xsd:decimal ;
+  CoffeeShop:madeWith CoffeeShop:WhiskyDrink ;
+  CoffeeShop:preparationTime "2 minutes" ;
+  CoffeeShop:typeOfDrink "Smoked Whisky" ;
+  rdfs:label "Whisky Smoked" ;
+.
 CoffeeShop:WhiteTeaLeaves
-  a CoffeeShop:Supply ;
+  rdf:type CoffeeShop:Supply ;
   CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
-  rdfs:label "Supply" ;
+  rdfs:label "White Tea Leaves" ;
 .
 CoffeeShop:Wine
-  a rdfs:Class ;
+  rdf:type rdfs:Class ;
   rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
 .
-CoffeeShop:WineDrink1
-  a CoffeeShop:Supply ;
-  CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
-  rdfs:label "Supplier" ;
-.
-CoffeeShop:WineDrink2
-  a CoffeeShop:Supply ;
+CoffeeShop:WineDrinkRed
+  rdf:type CoffeeShop:Supply ;
   CoffeeShop:suppliedBy CoffeeShop:Supplier_3 ;
-  rdfs:label "WineDrink" ;
+  rdfs:label "Wine Drink Red" ;
+.
+CoffeeShop:WineDrinkWhite
+  rdf:type CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
+  rdfs:label "Wine Drink White" ;
+.
+CoffeeShop:Wine_Red
+  rdf:type CoffeeShop:Wine ;
+  CoffeeShop:amountOfAlcohol "14"^^xsd:decimal ;
+  CoffeeShop:drinkPrice 8.50 ;
+  CoffeeShop:madeWith CoffeeShop:WineDrinkRed ;
+  CoffeeShop:preparationTime "3 minutes" ;
+  CoffeeShop:typeOfDrink "Red wine" ;
+  rdfs:label "Wine REd" ;
+.
+CoffeeShop:Wine_White
+  rdf:type CoffeeShop:Wine ;
+  CoffeeShop:amountOfAlcohol "12"^^xsd:decimal ;
+  CoffeeShop:drinkPrice 6.50 ;
+  CoffeeShop:madeWith CoffeeShop:WineDrinkWhite ;
+  CoffeeShop:preparationTime "3 minutes" ;
+  CoffeeShop:typeOfDrink "White wine" ;
+  rdfs:label "Wine White" ;
 .
 CoffeeShop:amountOfAlcohol
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:AlchoholicDrink ;
   rdfs:label "amount of alcohol" ;
   rdfs:range xsd:decimal ;
 .
 CoffeeShop:amountOfCaffeine
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:NonAlchoholicDrink ;
   rdfs:label "amount of coffeine" ;
   rdfs:range xsd:string ;
 .
 CoffeeShop:baristaShift
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
   rdfs:label "staffs shift" ;
   rdfs:range CoffeeShop:Barista ;
 .
 CoffeeShop:baristaWage
-  a CoffeeShop:Wage ;
+  rdf:type CoffeeShop:Wage ;
   rdfs:label "Wage" ;
 .
 CoffeeShop:birthday
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Person ;
   rdfs:label "birthday" ;
   rdfs:range xsd:date ;
 .
 CoffeeShop:clientArrival
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Order ;
   rdfs:label "clients arrival" ;
   rdfs:range CoffeeShop:Arrival ;
 .
 CoffeeShop:comingDay
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Arrival ;
   rdfs:label "coming day" ;
   rdfs:range xsd:string ;
 .
 CoffeeShop:comingTime
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Arrival ;
   rdfs:label "coming time" ;
   rdfs:range xsd:time ;
 .
 CoffeeShop:day
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
   rdfs:label "day" ;
   rdfs:range xsd:string ;
 .
 CoffeeShop:drinkOrdered
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Order ;
   rdfs:label "Price" ;
   rdfs:range CoffeeShop:Drink ;
 .
 CoffeeShop:drinkPrice
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Drink ;
   rdfs:label "Price" ;
   rdfs:range xsd:decimal ;
 .
 CoffeeShop:endingTime
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
   rdfs:label "ending time" ;
   rdfs:range xsd:time ;
 .
 CoffeeShop:extraTime
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
   rdfs:label "extra time" ;
   rdfs:range xsd:time ;
 .
 CoffeeShop:firstName
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Person ;
   rdfs:label "price" ;
   rdfs:range xsd:string ;
 .
 CoffeeShop:isSmoking
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Client ;
   rdfs:label "Smoking" ;
   rdfs:range xsd:boolean ;
 .
 CoffeeShop:lastName
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Person ;
   rdfs:label "price" ;
   rdfs:range xsd:string ;
 .
 CoffeeShop:leavingTime
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Arrival ;
   rdfs:label "coming time" ;
   rdfs:range xsd:time ;
 .
 CoffeeShop:madeBy
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Order ;
   rdfs:label "made by" ;
   rdfs:range CoffeeShop:Barista ;
 .
 CoffeeShop:madeWith
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Drink ;
   rdfs:label "Supply" ;
   rdfs:range CoffeeShop:Supply ;
 .
 CoffeeShop:mobileNumber
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Person ;
   rdfs:label "mobile number" ;
   rdfs:range xsd:string ;
 .
 CoffeeShop:moneyPerHour
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Wage ;
   rdfs:label "amount of money" ;
   rdfs:range xsd:decimal ;
 .
 CoffeeShop:orderNumber
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Order ;
   rdfs:label "order number" ;
   rdfs:range xsd:integer ;
 .
 CoffeeShop:orderedBy
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Order ;
   rdfs:label "ordered by" ;
   rdfs:range CoffeeShop:Client ;
 .
 CoffeeShop:preparationTime
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Drink ;
   rdfs:label "preparation time" ;
   rdfs:range xsd:string ;
 .
 CoffeeShop:servedBy
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Order ;
   rdfs:label "served by" ;
   rdfs:range CoffeeShop:Server ;
 .
 CoffeeShop:serverShift
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
   rdfs:label "Barista" ;
   rdfs:range CoffeeShop:Server ;
 .
 CoffeeShop:serverWage
-  a CoffeeShop:Wage ;
+  rdf:type CoffeeShop:Wage ;
   rdfs:label "Server" ;
 .
 CoffeeShop:staffPayment
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Staff ;
   rdfs:label "payment" ;
   rdfs:range CoffeeShop:Wage ;
 .
 CoffeeShop:startingTime
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
   rdfs:label "starting time" ;
   rdfs:range xsd:time ;
 .
 CoffeeShop:suppliedBy
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Supply ;
   rdfs:label "SuppliedBy" ;
   rdfs:range CoffeeShop:Supplier ;
 .
 CoffeeShop:typeOfDrink
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Drink ;
   rdfs:label "type of drink" ;
   rdfs:range xsd:string ;
 .
 CoffeeShop:worksInside
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Staff ;
   rdfs:label "works inside" ;
   rdfs:range xsd:boolean ;
 .
 CoffeeShop:worksOutside
-  a rdf:Property ;
+  rdf:type rdf:Property ;
   rdfs:domain CoffeeShop:Staff ;
   rdfs:label "works outside" ;
   rdfs:range xsd:boolean ;
