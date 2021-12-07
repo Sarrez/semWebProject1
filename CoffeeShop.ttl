@@ -98,7 +98,6 @@ CoffeeShop:Client
 CoffeeShop:Client_10
   a CoffeeShop:Client ;
   CoffeeShop:birthday "2002-04-29"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:WednesdayArrival_1 ;
   CoffeeShop:firstName "Filippos" ;
   CoffeeShop:isSmoking true ;
   CoffeeShop:lastName "Petridis" ;
@@ -108,7 +107,6 @@ CoffeeShop:Client_10
 CoffeeShop:Client_11
   a CoffeeShop:Client ;
   CoffeeShop:birthday "1994-01-24"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:WednesdayArrival_3 ;
   CoffeeShop:firstName "Voula" ;
   CoffeeShop:isSmoking true ;
   CoffeeShop:lastName "Ouzouni" ;
@@ -118,7 +116,6 @@ CoffeeShop:Client_11
 CoffeeShop:Client_12
   a CoffeeShop:Client ;
   CoffeeShop:birthday "1992-02-10"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:WednesdayArrival_4 ;
   CoffeeShop:firstName "Eleni" ;
   CoffeeShop:isSmoking true ;
   CoffeeShop:lastName "Alexandrakou" ;
@@ -128,7 +125,6 @@ CoffeeShop:Client_12
 CoffeeShop:Client_13
   a CoffeeShop:Client ;
   CoffeeShop:birthday "1989-01-12"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:WednesdayArrival_5 ;
   CoffeeShop:firstName "Fotis" ;
   CoffeeShop:isSmoking true ;
   CoffeeShop:lastName "Natsis" ;
@@ -138,7 +134,6 @@ CoffeeShop:Client_13
 CoffeeShop:Client_2
   a CoffeeShop:Client ;
   CoffeeShop:birthday "1993-03-02"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:MondayArrival_1 ;
   CoffeeShop:firstName "Marina" ;
   CoffeeShop:isSmoking false ;
   CoffeeShop:lastName "Ioannou" ;
@@ -148,7 +143,6 @@ CoffeeShop:Client_2
 CoffeeShop:Client_3
   a CoffeeShop:Client ;
   CoffeeShop:birthday "1990-11-05"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:MondayArrival_2 ;
   CoffeeShop:firstName "Sakis" ;
   CoffeeShop:isSmoking false ;
   CoffeeShop:lastName "Kontaras" ;
@@ -158,7 +152,6 @@ CoffeeShop:Client_3
 CoffeeShop:Client_4
   a CoffeeShop:Client ;
   CoffeeShop:birthday "1982-07-11"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:MondayArrival_3 ;
   CoffeeShop:firstName "Kuriaki" ;
   CoffeeShop:isSmoking true ;
   CoffeeShop:lastName "Raptaki" ;
@@ -168,7 +161,6 @@ CoffeeShop:Client_4
 CoffeeShop:Client_5
   a CoffeeShop:Client ;
   CoffeeShop:birthday "2000-05-02"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:MondayArrival_4 ;
   CoffeeShop:firstName "Anastasios" ;
   CoffeeShop:isSmoking false ;
   CoffeeShop:lastName "Kuriakidis" ;
@@ -178,7 +170,6 @@ CoffeeShop:Client_5
 CoffeeShop:Client_6
   a CoffeeShop:Client ;
   CoffeeShop:birthday "2000-02-19"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:TuesdayArrival_1 ;
   CoffeeShop:firstName "Maria" ;
   CoffeeShop:isSmoking true ;
   CoffeeShop:lastName "Fotakidou" ;
@@ -188,7 +179,6 @@ CoffeeShop:Client_6
 CoffeeShop:Client_7
   a CoffeeShop:Client ;
   CoffeeShop:birthday "1994-12-22"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:TuesdayArrival_2 ;
   CoffeeShop:firstName "Kostantinous" ;
   CoffeeShop:isSmoking true ;
   CoffeeShop:lastName "Metakidis" ;
@@ -198,7 +188,6 @@ CoffeeShop:Client_7
 CoffeeShop:Client_8
   a CoffeeShop:Client ;
   CoffeeShop:birthday "1994-10-30"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:TuesdayArrival_3 ;
   CoffeeShop:firstName "Alexandra" ;
   CoffeeShop:isSmoking false ;
   CoffeeShop:lastName "Tamoulxidou" ;
@@ -208,7 +197,6 @@ CoffeeShop:Client_8
 CoffeeShop:Client_9
   a CoffeeShop:Client ;
   CoffeeShop:birthday "2003-05-05"^^xsd:date ;
-  CoffeeShop:clientsArrival CoffeeShop:WednesdayArrival_2 ;
   CoffeeShop:firstName "Timos" ;
   CoffeeShop:isSmoking true ;
   CoffeeShop:lastName "Terkenlis" ;
@@ -452,26 +440,110 @@ CoffeeShop:Order
 .
 CoffeeShop:Order_1
   a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:MondayArrival_1 ;
   CoffeeShop:drinkOrdered CoffeeShop:Juice_1 ;
   CoffeeShop:madeBy CoffeeShop:Barista_3 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_11 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_13 ;
   CoffeeShop:servedBy CoffeeShop:Server_4 ;
   rdfs:label "Order" ;
 .
 CoffeeShop:Order_2
   a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_1 ;
   CoffeeShop:drinkOrdered CoffeeShop:Tea_1 ;
   CoffeeShop:madeBy CoffeeShop:Barista_3 ;
-  CoffeeShop:orderedBy CoffeeShop:Client_11 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_12 ;
   CoffeeShop:servedBy CoffeeShop:Server_4 ;
   rdfs:label "Order" ;
 .
 CoffeeShop:Order_3
   a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_2 ;
   CoffeeShop:drinkOrdered CoffeeShop:Coffee_1 ;
   CoffeeShop:madeBy CoffeeShop:Barista_3 ;
   CoffeeShop:orderedBy CoffeeShop:Client_11 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_4
+  a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:MondayArrival_2 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Juice_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_2 ;
   CoffeeShop:servedBy CoffeeShop:Server_4 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_5
+  a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:WednesdayArrival_4 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Tea_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_4 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_7 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_6
+  a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:FridayArrival_1 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Coffee_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_2 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_9 ;
+  CoffeeShop:servedBy CoffeeShop:Server_1 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_7
+  a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:TuesdayArrival_3 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Juice_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_8 ;
+  CoffeeShop:servedBy CoffeeShop:Server_4 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_8
+  a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:SundayArrival_2;
+  CoffeeShop:drinkOrdered CoffeeShop:Tea_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_3 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_9
+  a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:SundayArrival_3 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Coffee_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_4 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_10
+  a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:SaturdayArrival_1 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Juice_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_1 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_2 ;
+  CoffeeShop:servedBy CoffeeShop:Server_1 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_11
+  a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:SaturdayArrival_4;
+  CoffeeShop:drinkOrdered CoffeeShop:Tea_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_11 ;
+  CoffeeShop:servedBy CoffeeShop:Server_3 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_12
+  a CoffeeShop:Order ;
+  CoffeeShop:clientArrival CoffeeShop:ThursdayArrival_1 ;
+  CoffeeShop:drinkOrdered CoffeeShop:Coffee_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_2 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_13 ;
+  CoffeeShop:servedBy CoffeeShop:Server_2 ;
   rdfs:label "Order" ;
 .
 CoffeeShop:Person
@@ -815,9 +887,9 @@ CoffeeShop:birthday
   rdfs:label "birthday" ;
   rdfs:range xsd:date ;
 .
-CoffeeShop:clientsArrival
+CoffeeShop:clientArrival
   a rdf:Property ;
-  rdfs:domain CoffeeShop:Client ;
+  rdfs:domain CoffeeShop:Order ;
   rdfs:label "clients arrival" ;
   rdfs:range CoffeeShop:Arrival ;
 .
