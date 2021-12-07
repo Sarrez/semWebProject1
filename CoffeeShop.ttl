@@ -5,10 +5,12 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://test1.project.rdfs/CoffeeShop>
   a owl:Ontology ;
+  spin:imports <http://topbraid.org/spin/rdfsplus> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 CoffeeShop:AlchoholicDrink
@@ -28,11 +30,11 @@ CoffeeShop:Barista
 .
 CoffeeShop:Barista_1
   a CoffeeShop:Barista ;
-  CoffeeShop:birthday "1998-04-12"^^xsd:date ;
+  CoffeeShop:birthday "2002-04-12"^^xsd:date ;
   CoffeeShop:firstName "Pavlos" ;
   CoffeeShop:lastName "Petrou" ;
   CoffeeShop:mobileNumber "+306922324672" ;
-  CoffeeShop:payment CoffeeShop:baristaWage ;
+  CoffeeShop:staffPayment CoffeeShop:baristaWage ;
   CoffeeShop:worksInside true ;
   CoffeeShop:worksOutside false ;
   rdfs:label "Barista" ;
@@ -43,7 +45,7 @@ CoffeeShop:Barista_2
   CoffeeShop:firstName "Giorgos" ;
   CoffeeShop:lastName "Tzaras" ;
   CoffeeShop:mobileNumber "+306931323332" ;
-  CoffeeShop:payment CoffeeShop:baristaWage ;
+  CoffeeShop:staffPayment CoffeeShop:baristaWage ;
   CoffeeShop:worksInside true ;
   CoffeeShop:worksOutside false ;
   rdfs:label "Barista" ;
@@ -54,7 +56,7 @@ CoffeeShop:Barista_3
   CoffeeShop:firstName "Eleftheria" ;
   CoffeeShop:lastName "Karadhmou" ;
   CoffeeShop:mobileNumber "+306922398222" ;
-  CoffeeShop:payment CoffeeShop:baristaWage ;
+  CoffeeShop:staffPayment CoffeeShop:baristaWage ;
   CoffeeShop:worksInside true ;
   CoffeeShop:worksOutside false ;
   rdfs:label "Barista" ;
@@ -65,7 +67,7 @@ CoffeeShop:Barista_4
   CoffeeShop:firstName "Katerina" ;
   CoffeeShop:lastName "Ioannidou" ;
   CoffeeShop:mobileNumber "+306921946679" ;
-  CoffeeShop:payment CoffeeShop:baristaWage ;
+  CoffeeShop:staffPayment CoffeeShop:baristaWage ;
   CoffeeShop:worksInside true ;
   CoffeeShop:worksOutside false ;
   rdfs:label "Barista" ;
@@ -79,6 +81,10 @@ CoffeeShop:Beverage
   rdfs:label "Beverage" ;
   rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
 .
+CoffeeShop:BlackTeaLeaves
+  a CoffeeShop:Supply ;
+  rdfs:label "BlackTeaLeaves" ;
+.
 CoffeeShop:Cashier
   a rdfs:Class ;
   rdfs:label "Cashier" ;
@@ -88,12 +94,6 @@ CoffeeShop:Client
   a rdfs:Class ;
   rdfs:label "Client" ;
   rdfs:subClassOf CoffeeShop:Person ;
-.
-CoffeeShop:Client_1
-  a CoffeeShop:Client ;
-  CoffeeShop:clientsArrival CoffeeShop:MondayArrival_1 ;
-  CoffeeShop:isSmoking false ;
-  rdfs:label "Client" ;
 .
 CoffeeShop:Client_10
   a CoffeeShop:Client ;
@@ -242,7 +242,7 @@ CoffeeShop:Coffee_1
 .
 CoffeeShop:Coffee_2
   a CoffeeShop:Coffee ;
-  CoffeeShop:madeWith CoffeeShop:CoffeeBeans1 ;
+  CoffeeShop:madeWith CoffeeShop:CoffeeBeans_2 ;
   CoffeeShop:typeOfDrink "espresso" ;
   rdfs:label "Supply" ;
 .
@@ -254,70 +254,95 @@ CoffeeShop:Drink
 CoffeeShop:EveningShift1
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
-  CoffeeShop:hasServer CoffeeShop:Server_4 ;
+  CoffeeShop:day "Monday" ;
+  CoffeeShop:endingTime "01:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_4 ;
+  CoffeeShop:startingTime "17:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift2
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
-  CoffeeShop:hasServer CoffeeShop:Server_4 ;
+  CoffeeShop:day "Tuesday" ;
+  CoffeeShop:endingTime "01:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_4 ;
+  CoffeeShop:startingTime "16:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift3
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_4 ;
-  CoffeeShop:hasServer CoffeeShop:Server_3 ;
+  CoffeeShop:day "Wednesday" ;
+  CoffeeShop:endingTime "01:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_3 ;
+  CoffeeShop:startingTime "16:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift4
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_4 ;
-  CoffeeShop:hasServer CoffeeShop:Server_3 ;
+  CoffeeShop:day "Thursday" ;
+  CoffeeShop:endingTime "01:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_3 ;
+  CoffeeShop:startingTime "17:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift5
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
-  CoffeeShop:hasServer CoffeeShop:Server_3 ;
+  CoffeeShop:day "Friday" ;
+  CoffeeShop:endingTime "01:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_3 ;
+  CoffeeShop:startingTime "16:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift6
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
-  CoffeeShop:hasServer CoffeeShop:Server_3 ;
+  CoffeeShop:day "Saturday" ;
+  CoffeeShop:endingTime "01:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_3 ;
+  CoffeeShop:startingTime "17:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:EveningShift7
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_3 ;
-  CoffeeShop:hasServer CoffeeShop:Server_3 ;
+  CoffeeShop:day "Sunday" ;
+  CoffeeShop:endingTime "01:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_3 ;
+  CoffeeShop:startingTime "16:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:FridayArrival_1
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Friday" ;
-  CoffeeShop:comingTime "08:12" ;
-  CoffeeShop:leavingTime "10:30" ;
+  CoffeeShop:comingTime "08:30:00"^^xsd:time ;
+  CoffeeShop:leavingTime "10:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:FridayArrival_2
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Friday" ;
-  CoffeeShop:comingTime "09:12" ;
-  CoffeeShop:leavingTime "11:00" ;
+  CoffeeShop:comingTime "09:12:00"^^xsd:time ;
+  CoffeeShop:leavingTime "11:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:FridayArrival_3
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Friday" ;
-  CoffeeShop:comingTime "19:12" ;
-  CoffeeShop:leavingTime "21:00" ;
+  CoffeeShop:comingTime "19:12:00"^^xsd:time ;
+  CoffeeShop:leavingTime "21:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:Juice
   a rdfs:Class ;
   rdfs:label "Juice" ;
   rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
+.
+CoffeeShop:Juice_1
+  a CoffeeShop:Juice ;
+  rdfs:label "Juice" ;
 .
 CoffeeShop:Mocktail
   a rdfs:Class ;
@@ -326,68 +351,93 @@ CoffeeShop:Mocktail
 .
 CoffeeShop:MondayArrival_1
   a CoffeeShop:Arrival ;
+  CoffeeShop:comingDay "Monday" ;
+  CoffeeShop:comingTime "08:32:00"^^xsd:time ;
+  CoffeeShop:leavingTime "11:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:MondayArrival_2
   a CoffeeShop:Arrival ;
+  CoffeeShop:comingDay "Monday" ;
+  CoffeeShop:comingTime "19:00:00"^^xsd:time ;
+  CoffeeShop:leavingTime "21:33:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:MondayArrival_3
   a CoffeeShop:Arrival ;
-  CoffeeShop:comingTime "13:55" ;
+  CoffeeShop:comingDay "Monday" ;
+  CoffeeShop:comingTime "23:00:00"^^xsd:time ;
+  CoffeeShop:leavingTime "00:45:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:MondayArrival_4
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Monday" ;
+  CoffeeShop:comingTime "22:12:00"^^xsd:time ;
+  CoffeeShop:leavingTime "01:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
-.
-CoffeeShop:Money
-  a rdfs:Class ;
-  rdfs:label "Money" ;
-  rdfs:subClassOf rdfs:Resource ;
 .
 CoffeeShop:MorningShift1
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
-  CoffeeShop:hasServer CoffeeShop:Server_1 ;
+  CoffeeShop:day "Monday" ;
+  CoffeeShop:endingTime "17:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_1 ;
+  CoffeeShop:startingTime "08:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift2
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
-  CoffeeShop:hasServer CoffeeShop:Server_1 ;
+  CoffeeShop:day "Tuesday" ;
+  CoffeeShop:endingTime "16:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_1 ;
+  CoffeeShop:startingTime "08:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift3
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
-  CoffeeShop:hasServer CoffeeShop:Server_2 ;
+  CoffeeShop:day "Wednesday" ;
+  CoffeeShop:endingTime "16:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_2 ;
+  CoffeeShop:startingTime "08:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift4
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_2 ;
-  CoffeeShop:endingTime "17:00" ;
-  CoffeeShop:hasServer CoffeeShop:Server_2 ;
+  CoffeeShop:day "Thursday" ;
+  CoffeeShop:endingTime "17:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_2 ;
+  CoffeeShop:startingTime "08:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift5
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_2 ;
-  CoffeeShop:hasServer CoffeeShop:Server_1 ;
+  CoffeeShop:day "Friday" ;
+  CoffeeShop:endingTime "16:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_1 ;
+  CoffeeShop:startingTime "08:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift6
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
-  CoffeeShop:hasServer CoffeeShop:Server_1 ;
+  CoffeeShop:day "Saturday" ;
+  CoffeeShop:endingTime "17:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_1 ;
+  CoffeeShop:startingTime "08:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:MorningShift7
   a CoffeeShop:Shift ;
   CoffeeShop:baristaShift CoffeeShop:Barista_1 ;
-  CoffeeShop:hasServer CoffeeShop:Server_1 ;
+  CoffeeShop:day "Sunday" ;
+  CoffeeShop:endingTime "16:00:00"^^xsd:time ;
+  CoffeeShop:serverShift CoffeeShop:Server_1 ;
+  CoffeeShop:startingTime "08:00:00"^^xsd:time ;
   rdfs:label "Shift" ;
 .
 CoffeeShop:NonAlchoholicDrink
@@ -402,9 +452,25 @@ CoffeeShop:Order
 .
 CoffeeShop:Order_1
   a CoffeeShop:Order ;
+  CoffeeShop:drinkOrdered CoffeeShop:Juice_1 ;
   CoffeeShop:madeBy CoffeeShop:Barista_3 ;
-  CoffeeShop:orderDate "2021-12-05"^^xsd:date ;
-  CoffeeShop:orderedBy CoffeeShop:Client_1 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_11 ;
+  CoffeeShop:servedBy CoffeeShop:Server_4 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_2
+  a CoffeeShop:Order ;
+  CoffeeShop:drinkOrdered CoffeeShop:Tea_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_11 ;
+  CoffeeShop:servedBy CoffeeShop:Server_4 ;
+  rdfs:label "Order" ;
+.
+CoffeeShop:Order_3
+  a CoffeeShop:Order ;
+  CoffeeShop:drinkOrdered CoffeeShop:Coffee_1 ;
+  CoffeeShop:madeBy CoffeeShop:Barista_3 ;
+  CoffeeShop:orderedBy CoffeeShop:Client_11 ;
   CoffeeShop:servedBy CoffeeShop:Server_4 ;
   rdfs:label "Order" ;
 .
@@ -421,29 +487,29 @@ CoffeeShop:Rum
 CoffeeShop:SaturdayArrival_1
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Saturday" ;
-  CoffeeShop:comingTime "08:12" ;
-  CoffeeShop:leavingTime "10:30" ;
+  CoffeeShop:comingTime "08:12:00"^^xsd:time ;
+  CoffeeShop:leavingTime "10:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SaturdayArrival_2
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Saturday" ;
-  CoffeeShop:comingTime "18:12" ;
-  CoffeeShop:leavingTime "19:45" ;
+  CoffeeShop:comingTime "18:12:00"^^xsd:time ;
+  CoffeeShop:leavingTime "19:45:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SaturdayArrival_3
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Saturday" ;
-  CoffeeShop:comingTime "19:00" ;
-  CoffeeShop:leavingTime "21:15" ;
+  CoffeeShop:comingTime "19:00:00"^^xsd:time ;
+  CoffeeShop:leavingTime "21:15:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SaturdayArrival_4
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Saturday" ;
-  CoffeeShop:comingTime "21:00" ;
-  CoffeeShop:leavingTime "23:00" ;
+  CoffeeShop:comingTime "21:00:00"^^xsd:time ;
+  CoffeeShop:leavingTime "23:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:Server
@@ -457,7 +523,7 @@ CoffeeShop:Server_1
   CoffeeShop:firstName "Kassiopi" ;
   CoffeeShop:lastName "Merakli" ;
   CoffeeShop:mobileNumber "+306921028609" ;
-  CoffeeShop:payment CoffeeShop:serverWage ;
+  CoffeeShop:staffPayment CoffeeShop:serverWage ;
   CoffeeShop:worksInside true ;
   CoffeeShop:worksOutside true ;
   rdfs:label "Server" ;
@@ -468,7 +534,7 @@ CoffeeShop:Server_2
   CoffeeShop:firstName "Drosoula" ;
   CoffeeShop:lastName "Kexagia" ;
   CoffeeShop:mobileNumber "+306920920172" ;
-  CoffeeShop:payment CoffeeShop:serverWage ;
+  CoffeeShop:staffPayment CoffeeShop:serverWage ;
   CoffeeShop:worksInside true ;
   CoffeeShop:worksOutside true ;
   rdfs:label "Server" ;
@@ -479,18 +545,18 @@ CoffeeShop:Server_3
   CoffeeShop:firstName "Pantelis" ;
   CoffeeShop:lastName "Logothetis" ;
   CoffeeShop:mobileNumber "+306901281732" ;
-  CoffeeShop:payment CoffeeShop:serverWage ;
+  CoffeeShop:staffPayment CoffeeShop:serverWage ;
   CoffeeShop:worksInside true ;
   CoffeeShop:worksOutside true ;
   rdfs:label "Server" ;
 .
 CoffeeShop:Server_4
   a CoffeeShop:Server ;
-  CoffeeShop:birthday "1997-09-01"^^xsd:date ;
+  CoffeeShop:birthday "2001-09-01"^^xsd:date ;
   CoffeeShop:firstName "Leonidas" ;
   CoffeeShop:lastName "Papanikolaou" ;
   CoffeeShop:mobileNumber "+306901324023" ;
-  CoffeeShop:payment CoffeeShop:serverWage ;
+  CoffeeShop:staffPayment CoffeeShop:serverWage ;
   CoffeeShop:worksInside true ;
   CoffeeShop:worksOutside true ;
   rdfs:label "Server" ;
@@ -508,36 +574,36 @@ CoffeeShop:Staff
 CoffeeShop:SundayArrival_1
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
-  CoffeeShop:comingTime "10:00" ;
-  CoffeeShop:leavingTime "11:30" ;
+  CoffeeShop:comingTime "10:00:00"^^xsd:time ;
+  CoffeeShop:leavingTime "11:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SundayArrival_2
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
-  CoffeeShop:comingTime "09:12" ;
-  CoffeeShop:leavingTime "11:00" ;
+  CoffeeShop:comingTime "09:12:00"^^xsd:time ;
+  CoffeeShop:leavingTime "11:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SundayArrival_3
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
-  CoffeeShop:comingTime "19:30" ;
-  CoffeeShop:leavingTime "21:30" ;
+  CoffeeShop:comingTime "19:30:00"^^xsd:time ;
+  CoffeeShop:leavingTime "21:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SundayArrival_4
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
-  CoffeeShop:comingTime "22:00" ;
-  CoffeeShop:leavingTime "00:30" ;
+  CoffeeShop:comingTime "22:00:00"^^xsd:time ;
+  CoffeeShop:leavingTime "00:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:SundayArrival_5
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Sunday" ;
-  CoffeeShop:comingTime "23:00" ;
-  CoffeeShop:leavingTime "01:00" ;
+  CoffeeShop:comingTime "23:00:00"^^xsd:time ;
+  CoffeeShop:leavingTime "01:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:Supervisor
@@ -592,10 +658,23 @@ CoffeeShop:Tea
   rdfs:label "Price" ;
   rdfs:subClassOf CoffeeShop:NonAlchoholicDrink ;
 .
-CoffeeShop:TeaLeaves
-  a CoffeeShop:Supply ;
-  CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
-  rdfs:label "Supply" ;
+CoffeeShop:Tea_1
+  a CoffeeShop:Tea ;
+  CoffeeShop:madeWith CoffeeShop:WhiteTeaLeaves ;
+  CoffeeShop:typeOfDrink "black tea" ;
+  rdfs:label "Tea" ;
+.
+CoffeeShop:Tea_2
+  a CoffeeShop:Tea ;
+  CoffeeShop:madeWith CoffeeShop:WhiteTeaLeaves ;
+  CoffeeShop:typeOfDrink "green tea" ;
+  rdfs:label "Tea" ;
+.
+CoffeeShop:Tea_3
+  a CoffeeShop:Tea ;
+  CoffeeShop:madeWith CoffeeShop:WhiteTeaLeaves ;
+  CoffeeShop:typeOfDrink "white tea" ;
+  rdfs:label "Tea" ;
 .
 CoffeeShop:Tequila
   a rdfs:Class ;
@@ -605,84 +684,94 @@ CoffeeShop:Tequila
 CoffeeShop:ThursdayArrival_1
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Thursday" ;
-  CoffeeShop:comingTime "10:12" ;
-  CoffeeShop:leavingTime "11:30" ;
+  CoffeeShop:comingTime "10:12:00"^^xsd:time ;
+  CoffeeShop:leavingTime "11:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:ThursdayArrival_2
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Thursday" ;
-  CoffeeShop:comingTime "11:00" ;
-  CoffeeShop:leavingTime "12:30" ;
+  CoffeeShop:comingTime "11:00:00"^^xsd:time ;
+  CoffeeShop:leavingTime "12:30:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:ThursdayArrival_3
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Thursday" ;
-  CoffeeShop:comingTime "19:00" ;
-  CoffeeShop:leavingTime "21:00" ;
+  CoffeeShop:comingTime "19:00:00"^^xsd:time ;
+  CoffeeShop:leavingTime "21:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:TuesdayArrival_1
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Tuesday" ;
-  CoffeeShop:comingTime "10:55" ;
-  CoffeeShop:leavingTime "12:55" ;
+  CoffeeShop:comingTime "10:55:00"^^xsd:time ;
+  CoffeeShop:leavingTime "12:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:TuesdayArrival_2
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Tuesday" ;
-  CoffeeShop:comingTime "08:35" ;
-  CoffeeShop:leavingTime "10:55" ;
+  CoffeeShop:comingTime "08:35:00"^^xsd:time ;
+  CoffeeShop:leavingTime "10:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:TuesdayArrival_3
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Tuesday" ;
-  CoffeeShop:comingTime "18:55" ;
-  CoffeeShop:leavingTime "20:20" ;
+  CoffeeShop:comingTime "18:55:00"^^xsd:time ;
+  CoffeeShop:leavingTime "20:20:00"^^xsd:time ;
   rdfs:label "Arrival" ;
+.
+CoffeeShop:Wage
+  a rdfs:Class ;
+  rdfs:label "Money" ;
+  rdfs:subClassOf rdfs:Resource ;
 .
 CoffeeShop:WednesdayArrival_1
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
-  CoffeeShop:comingTime "10:55" ;
-  CoffeeShop:leavingTime "12:55" ;
+  CoffeeShop:comingTime "10:55:00"^^xsd:time ;
+  CoffeeShop:leavingTime "12:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:WednesdayArrival_2
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
-  CoffeeShop:comingTime "08:20" ;
-  CoffeeShop:leavingTime "10:00" ;
+  CoffeeShop:comingTime "08:20:00"^^xsd:time ;
+  CoffeeShop:leavingTime "10:00:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:WednesdayArrival_3
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
-  CoffeeShop:comingTime "17:55" ;
-  CoffeeShop:leavingTime "19:55" ;
+  CoffeeShop:comingTime "17:55:00"^^xsd:time ;
+  CoffeeShop:leavingTime "19:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:WednesdayArrival_4
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
-  CoffeeShop:comingTime "20:55" ;
-  CoffeeShop:leavingTime "22:55" ;
+  CoffeeShop:comingTime "20:55:00"^^xsd:time ;
+  CoffeeShop:leavingTime "22:55:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:WednesdayArrival_5
   a CoffeeShop:Arrival ;
   CoffeeShop:comingDay "Wednesday" ;
-  CoffeeShop:comingTime "22:55" ;
-  CoffeeShop:leavingTime "00:12" ;
+  CoffeeShop:comingTime "22:55:00"^^xsd:time ;
+  CoffeeShop:leavingTime "00:12:00"^^xsd:time ;
   rdfs:label "Arrival" ;
 .
 CoffeeShop:Whisky
   a rdfs:Class ;
   rdfs:label "Whisky" ;
   rdfs:subClassOf CoffeeShop:AlchoholicDrink ;
+.
+CoffeeShop:WhiteTeaLeaves
+  a CoffeeShop:Supply ;
+  CoffeeShop:suppliedBy CoffeeShop:Supplier_1 ;
+  rdfs:label "Supply" ;
 .
 CoffeeShop:Wine
   a rdfs:Class ;
@@ -710,12 +799,6 @@ CoffeeShop:amountOfCaffeine
   rdfs:label "amount of coffeine" ;
   rdfs:range xsd:string ;
 .
-CoffeeShop:amountOfMoney
-  a rdf:Property ;
-  rdfs:domain CoffeeShop:Money ;
-  rdfs:label "amount of money" ;
-  rdfs:range xsd:decimal ;
-.
 CoffeeShop:baristaShift
   a rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
@@ -723,7 +806,7 @@ CoffeeShop:baristaShift
   rdfs:range CoffeeShop:Barista ;
 .
 CoffeeShop:baristaWage
-  a CoffeeShop:Money ;
+  a CoffeeShop:Wage ;
   rdfs:label "Wage" ;
 .
 CoffeeShop:birthday
@@ -748,7 +831,7 @@ CoffeeShop:comingTime
   a rdf:Property ;
   rdfs:domain CoffeeShop:Arrival ;
   rdfs:label "coming time" ;
-  rdfs:range xsd:string ;
+  rdfs:range xsd:time ;
 .
 CoffeeShop:day
   a rdf:Property ;
@@ -756,11 +839,11 @@ CoffeeShop:day
   rdfs:label "day" ;
   rdfs:range xsd:string ;
 .
-CoffeeShop:dayOfsupply
+CoffeeShop:drinkOrdered
   a rdf:Property ;
-  rdfs:domain CoffeeShop:Supply ;
-  rdfs:label "day ofsupply" ;
-  rdfs:range xsd:string ;
+  rdfs:domain CoffeeShop:Order ;
+  rdfs:label "Price" ;
+  rdfs:range CoffeeShop:Drink ;
 .
 CoffeeShop:drinkPrice
   a rdf:Property ;
@@ -768,35 +851,23 @@ CoffeeShop:drinkPrice
   rdfs:label "Price" ;
   rdfs:range xsd:decimal ;
 .
-CoffeeShop:duration
-  a rdf:Property ;
-  rdfs:domain CoffeeShop:Supply ;
-  rdfs:label "duration" ;
-  rdfs:range xsd:decimal ;
-.
 CoffeeShop:endingTime
   a rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
   rdfs:label "ending time" ;
-  rdfs:range xsd:string ;
+  rdfs:range xsd:time ;
 .
 CoffeeShop:extraTime
   a rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
   rdfs:label "extra time" ;
-  rdfs:range xsd:string ;
+  rdfs:range xsd:time ;
 .
 CoffeeShop:firstName
   a rdf:Property ;
   rdfs:domain CoffeeShop:Person ;
   rdfs:label "price" ;
   rdfs:range xsd:string ;
-.
-CoffeeShop:hasServer
-  a rdf:Property ;
-  rdfs:domain CoffeeShop:Shift ;
-  rdfs:label "Barista" ;
-  rdfs:range CoffeeShop:Server ;
 .
 CoffeeShop:isSmoking
   a rdf:Property ;
@@ -814,7 +885,7 @@ CoffeeShop:leavingTime
   a rdf:Property ;
   rdfs:domain CoffeeShop:Arrival ;
   rdfs:label "coming time" ;
-  rdfs:range xsd:string ;
+  rdfs:range xsd:time ;
 .
 CoffeeShop:madeBy
   a rdf:Property ;
@@ -834,11 +905,11 @@ CoffeeShop:mobileNumber
   rdfs:label "mobile number" ;
   rdfs:range xsd:string ;
 .
-CoffeeShop:orderDate
+CoffeeShop:moneyPerHour
   a rdf:Property ;
-  rdfs:domain CoffeeShop:Order ;
-  rdfs:label "order date" ;
-  rdfs:range xsd:date ;
+  rdfs:domain CoffeeShop:Wage ;
+  rdfs:label "amount of money" ;
+  rdfs:range xsd:decimal ;
 .
 CoffeeShop:orderNumber
   a rdf:Property ;
@@ -852,18 +923,6 @@ CoffeeShop:orderedBy
   rdfs:label "ordered by" ;
   rdfs:range CoffeeShop:Client ;
 .
-CoffeeShop:payment
-  a rdf:Property ;
-  rdfs:domain CoffeeShop:Staff ;
-  rdfs:label "payment" ;
-  rdfs:range CoffeeShop:Money ;
-.
-CoffeeShop:personsPayment
-  a rdf:Property ;
-  rdfs:domain CoffeeShop:Order ;
-  rdfs:label "person payment" ;
-  rdfs:range CoffeeShop:Money ;
-.
 CoffeeShop:preparationTime
   a rdf:Property ;
   rdfs:domain CoffeeShop:Drink ;
@@ -876,15 +935,27 @@ CoffeeShop:servedBy
   rdfs:label "served by" ;
   rdfs:range CoffeeShop:Server ;
 .
+CoffeeShop:serverShift
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:Shift ;
+  rdfs:label "Barista" ;
+  rdfs:range CoffeeShop:Server ;
+.
 CoffeeShop:serverWage
-  a CoffeeShop:Money ;
+  a CoffeeShop:Wage ;
   rdfs:label "Server" ;
+.
+CoffeeShop:staffPayment
+  a rdf:Property ;
+  rdfs:domain CoffeeShop:Staff ;
+  rdfs:label "payment" ;
+  rdfs:range CoffeeShop:Wage ;
 .
 CoffeeShop:startingTime
   a rdf:Property ;
   rdfs:domain CoffeeShop:Shift ;
   rdfs:label "starting time" ;
-  rdfs:range xsd:string ;
+  rdfs:range xsd:time ;
 .
 CoffeeShop:suppliedBy
   a rdf:Property ;
